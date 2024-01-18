@@ -1,5 +1,28 @@
 # e-Shop
 
+## Resources
+
+### Fonts
+
+### Icons
+
+https://www.icons8.com
+
+- Vinyl
+  - https://icons8.com/icon/nkCsuxTboA0z/vinyl
+- Cart
+  - https://icons8.com/icon/zhda2EVBCvHY/cart
+- Search
+  - https://img.icons8.com/sf-regular/48/000000/search.png
+- Favourite
+  - https://icons8.com/icon/64767/favourite
+
+### Design Inspiration
+
+https://dribbble.com/shots/22395878-Vinyl-Records-E-Commerce-Store
+
+https://dribbble.com/shots/11037958-E-commerce-App-Dark-Mode
+
 ## Task Completion History
 
 ### January 18, 2024
