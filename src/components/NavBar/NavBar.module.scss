@@ -1,9 +1,17 @@
+@use "../../styles/partials/palette";
+
 .nav {
   display: flex;
   gap: 50px;
 
   &__link {
+    padding: 8px 5px 0 5px;
     color: white;
     text-decoration: none;
+
+    &__active {
+      padding: 5px 5px 0 5px;
+      border-top: 3px solid palette.$accent-color;
+    }
   }
 }
