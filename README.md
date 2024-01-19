@@ -47,7 +47,10 @@ https://dribbble.com/shots/23222296-Vogue-Ecommerce-of-clothing-and-footwear
 ### January 18, 2024
 
 - Started a design mockup of the React application
+- Created basic header and functional navigation bar component
 
 The first thing I needed to do was to brainstorm what my fake online store was going to sell, and came up with the idea of physical audio formats (i.e., CDs, vinyls, and cassettes). Since they're quite 'old', I thought it would be cool to contrast this with a modern aesthetic for the React application.
 
-As usual, I started a design mockup of my fake online store (in Figma) to get a clear image of what I wanted the final product to look like.
+As usual, I started a design mockup of my fake online store (in Figma) to get a clear image of what I wanted the final product to look like. I went with a very simple colour palette which uses black as the background colour, white as the foreground, and a dark sky blue for an accent colour.
+
+I've also constructed a basic header and a functional navigation bar to start off the code of this project.
