@@ -66,3 +66,16 @@
 //     background-color: #f9f9f9;
 //   }
 // }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  padding: 30px 40px;
+
+  background-color: black;
+  color: white;
+  font-family: Helvetica, Arial, sans-serif;
+}
