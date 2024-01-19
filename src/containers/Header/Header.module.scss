@@ -1,0 +1,22 @@
+@use "../../styles/partials/typography";
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 75px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  font-family: typography.$logo-font;
+  text-transform: uppercase;
+  font-size: 37px;
+
+  &__icon {
+    width: 31px;
+    height: 31px;
+    margin: 0 2px;
+  }
+}
