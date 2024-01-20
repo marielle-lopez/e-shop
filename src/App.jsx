@@ -5,6 +5,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./containers/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
 import ProductsPage from "./pages/ProductsPage/ProductsPage";
+import Footer from "./components/Footer/Footer";
+import ReturnsPage from "./pages/ReturnsPage/ReturnsPage";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage/PrivacyPolicyPage";
+import TermsOfServicePage from "./pages/TermsOfServicePage/TermsOfServicePage";
 
 function App() {
   return (
@@ -14,7 +18,11 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/products" element={<ProductsPage />} />
+          <Route path="/returns" element={<ReturnsPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms-of-service" element={<TermsOfServicePage />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );
