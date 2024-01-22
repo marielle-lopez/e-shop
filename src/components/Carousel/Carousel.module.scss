@@ -1,0 +1,41 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 40px;
+}
+
+.button {
+  background: none;
+  border: none;
+}
+
+.showcase_img {
+  height: 90vh;
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+
+  opacity: 70%;
+}
+
+.showcase_info {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.arrows_wrapper {
+  display: flex;
+  height: 90vh;
+  width: 100%;
+  justify-content: space-between;
+
+  position: absolute;
+  z-index: 2;
+}

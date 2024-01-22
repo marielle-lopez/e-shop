@@ -1,5 +1,12 @@
+import Carousel from "../../components/Carousel/Carousel";
+import styles from "./HomePage.module.scss";
+
 const HomePage = () => {
-  return <div>Home</div>;
+  return (
+    <main>
+      <Carousel />
+    </main>
+  );
 };
 
 export default HomePage;
