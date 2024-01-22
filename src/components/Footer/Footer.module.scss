@@ -1,3 +1,10 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px 0;
+}
+
 .icons_wrapper {
   display: flex;
   gap: 5px;
@@ -6,4 +13,26 @@
 .icon {
   width: 20px;
   opacity: 30%;
+}
+
+.row_wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navlinks {
+  &__wrapper {
+    display: flex;
+    gap: 50px;
+  }
+
+  &__link {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+  }
+}
+
+.copyright_text {
+  font-size: 14px;
 }
