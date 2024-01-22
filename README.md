@@ -47,8 +47,11 @@ https://dribbble.com/shots/23222296-Vogue-Ecommerce-of-clothing-and-footwear
 ### January 22, 2024
 
 - Constructed a basic and function carousel component
+- Created a Firestore database with some data
+- Created fetching functions to grab data from Firestore database
+- Utilised data fetched from Firestore database to display information in carousel component
 
-I've created a simple carousel component for the landing page to showcase featured products. It's not pretty, but it works! It can be further refactored to increase the modularity of my code, but for now I'm focusing on the minimum viable product goals of this project.
+I've created a simple carousel component for the landing page to showcase featured products. It's not pretty, but it works! It can be further refactored to increase the modularity of my code, but for now I'm focusing on the minimum viable product goals of this project. I've also managed to create a Firestore database with some data, made a reference to the service, and successfully fetched data from it to load information into the carousel component!
 
 ### January 18, 2024
 
