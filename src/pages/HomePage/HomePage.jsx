@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
-import Carousel from "../../components/Carousel/Carousel";
 import styles from "./HomePage.module.scss";
+
+import Carousel from "../../components/Carousel/Carousel";
 import { ProductsContext } from "../../context/ProductsContextProvider/ProductsContextProvider";
 import { getAllProducts } from "../../services/products";
 

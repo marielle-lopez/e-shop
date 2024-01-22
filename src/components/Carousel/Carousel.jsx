@@ -1,3 +1,4 @@
+import Button from "../Button/Button";
 import styles from "./Carousel.module.scss";
 import { useState } from "react";
 
@@ -36,7 +37,7 @@ const Carousel = ({ data }) => {
         <section className={styles.showcase_info}>
           <h2>{data[index].title}</h2>
           <p>by {data[index].artist}</p>
-          <button>See available audio formats</button>
+          <Button text="See available audio formats" />
         </section>
 
         <button className={styles.button} onClick={handleIncrement}>
