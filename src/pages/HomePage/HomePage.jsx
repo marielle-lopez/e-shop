@@ -1,12 +1,19 @@
+import { useContext, useEffect } from "react";
 import Carousel from "../../components/Carousel/Carousel";
 import styles from "./HomePage.module.scss";
+import { ProductsContext } from "../../context/ProductsContextProvider/ProductsContextProvider";
+import { getAllProducts } from "../../services/products";
 
 const HomePage = () => {
-  return (
-    <main>
-      <Carousel />
-    </main>
-  );
+  const { products, setProducts } = useContext(ProductsContext);
+
+  useEffect(() => {
+    getAllProducts().then((response) => {
+      setProducts(response);
+    });
+  }, []);
+
+  return <main>{products && <Carousel data={products} />}</main>;
 };
 
 export default HomePage;
