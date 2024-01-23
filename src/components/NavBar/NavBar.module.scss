@@ -2,8 +2,9 @@
 
 .nav {
   display: flex;
+  flex-grow: 1;
   align-items: center;
-  gap: 50px;
+  justify-content: space-between;
 
   &__link {
     padding: 8px 5px 0 5px;
@@ -19,4 +20,14 @@
 
 .icon {
   width: 30px;
+}
+
+.text_items {
+  display: flex;
+  gap: 50px;
+}
+
+.icon_items {
+  display: flex;
+  gap: 10px;
 }
