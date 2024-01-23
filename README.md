@@ -15,10 +15,12 @@ https://www.icons8.com
   - https://icons8.com/icon/nkCsuxTboA0z/vinyl
 - Cart
   - https://icons8.com/icon/zhda2EVBCvHY/cart
+  - https://icons8.com/icon/Vfx42bq0G2lJ/cart
 - Search
   - https://img.icons8.com/sf-regular/48/000000/search.png
 - Favourite
   - https://icons8.com/icon/64767/favourite
+  - https://icons8.com/icon/fzAoxIsUMv0P/favorite
 - Right chevron
   - https://icons8.com/icon/85789/chevron
 - Left chevron
@@ -33,6 +35,8 @@ https://www.icons8.com
   - https://icons8.com/icon/aaoukT8evpOE/tiktok
 - Spotify
   - https://icons8.com/icon/99983/spotify
+- Bin
+  - https://icons8.com/icon/nerFBdXcYDve/bin
 
 ### Design Inspiration
 
@@ -42,6 +46,8 @@ https://dribbble.com/shots/11037958-E-commerce-App-Dark-Mode
 
 https://dribbble.com/shots/23222296-Vogue-Ecommerce-of-clothing-and-footwear
 
+https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/bb145c57779427.59e3bcce5efa9.jpg
+
 ## Task Completion History
 
 ### January 23, 2024
@@ -50,6 +56,13 @@ https://dribbble.com/shots/23222296-Vogue-Ecommerce-of-clothing-and-footwear
 - Made each product card a link to a corresponding product page via React Router DOM
 - Added foundational content to display in produce page component
 - Created cart and favourites pages, added links to such pages into navigation bar, and constructed context for cart
+- Created cart feature-related components and begun functionality
+
+Today, I was able to create a product page to display a selected user-selected product on the 'Products' page. It doesn't display all available audio formats for sale, nor does it allow for proper user interactivity, but the foundations are there!
+
+I've also added pages for favourited products and the user's shopping cart with corresponding buttons in the navigation bar. The 'Cart' page in particular displays information fetched from the Firestore database; via a function that grabs information in the 'cart' collection. The next step is to figure out how I want to properly store cart items in the Firestore database. This'll probably involve me having to sketch out a schema.
+
+The next big milestone to reach is a fully functional shopping cart feature. This would entail a user being able to add a specific audio format of a product to their cart, and allowing them to add a user-specified quantity.
 
 ### January 22, 2024
 
@@ -75,6 +88,7 @@ I've also constructed a basic header and a functional navigation bar to start of
 
 ### High Priority
 
+- Sketch a schema for cart items
 - Allow user to add a product with a specified quantity and format to the cart
 - Allow user to favourite products
 - Store cart items in Firestore database
@@ -90,5 +104,6 @@ I've also constructed a basic header and a functional navigation bar to start of
 
 ### Low Priority
 
+- Format and re-structure 'Resources' section of `README.md` file
 - Change icons in navbar to be filled icons when link is active
 - Create an administrator portal to perform CRUD tasks on Firestore database
