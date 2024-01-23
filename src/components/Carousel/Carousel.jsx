@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import styles from "./Carousel.module.scss";
 import { useState } from "react";
@@ -41,7 +42,9 @@ const Carousel = ({ data }) => {
               by {data[index].artist}
             </p>
           </div>
-          <Button text="See available audio formats" />
+          <Link to={`/product/${data[index].id}`}>
+            <Button text="See available audio formats" />
+          </Link>
         </section>
 
         <button className={styles.button} onClick={handleIncrement}>
