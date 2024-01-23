@@ -8,7 +8,7 @@ const Header = () => {
         S
         <img
           className={styles.logo__icon}
-          src="src\assets\vinyl.png"
+          src="./src/assets/vinyl.png"
           alt="Vinyl icon"
         />
         und
