@@ -11,6 +11,7 @@ import Footer from "./components/Footer/Footer";
 import ReturnsPage from "./pages/ReturnsPage/ReturnsPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage/PrivacyPolicyPage";
 import TermsOfServicePage from "./pages/TermsOfServicePage/TermsOfServicePage";
+import ProductPage from "./pages/ProductPage/ProductPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/products" element={<ProductsPage />} />
+            <Route path="/product/:id" element={<ProductPage />} />
             <Route path="/returns" element={<ReturnsPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
             <Route path="/terms-of-service" element={<TermsOfServicePage />} />
