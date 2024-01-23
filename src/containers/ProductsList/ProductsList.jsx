@@ -16,7 +16,6 @@ const ProductsList = ({ products }) => {
             product.isForSale &&
             product.audioFormats.reduce((min, format) => {
               if (format.price > min || min === 0) {
-                console.log(format.price);
                 min = format.price;
               }
               return min;
