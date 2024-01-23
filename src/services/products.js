@@ -10,6 +10,8 @@ export const getAllProducts = async () => {
     };
   });
 
+  console.log(data);
+
   return data;
 };
 
