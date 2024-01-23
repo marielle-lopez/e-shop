@@ -35,10 +35,12 @@ const Carousel = ({ data }) => {
         </button>
 
         <section className={styles.showcase_info}>
-          <h2 className={styles.showcase_info__title}>{data[index].title}</h2>
-          <p className={styles.showcase_info__artist}>
-            by {data[index].artist}
-          </p>
+          <div className={styles.showcase_info__text}>
+            <h2 className={styles.showcase_info__title}>{data[index].title}</h2>
+            <p className={styles.showcase_info__artist}>
+              by {data[index].artist}
+            </p>
+          </div>
           <Button text="See available audio formats" />
         </section>
 

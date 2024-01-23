@@ -6,6 +6,9 @@
 
 .icon {
   width: 40px;
+  -webkit-filter: drop-shadow(5px 5px 5px black);
+  filter: drop-shadow(0 0 5px black);
+  padding: 40px;
 }
 
 .button {
@@ -28,15 +31,24 @@
   flex-grow: 1;
   flex-direction: column;
   justify-content: center;
-  padding: 10vw;
+  gap: 30px;
+  padding: 5vw;
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 
   &__title {
     font-size: 64px;
     font-weight: 100;
+    text-shadow: 0 0 15px black;
   }
 
   &__artist {
     font-size: 20px;
+    text-shadow: 0 0 5px black;
   }
 }
 
