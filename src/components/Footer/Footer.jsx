@@ -9,23 +9,23 @@ const Footer = () => {
         <div className={styles.icons_wrapper}>
           <img
             className={styles.icon}
-            src="src/assets/spotify.png"
+            src="./src/assets/spotify.png"
             alt="Spotify icon"
           />
           <img
             className={styles.icon}
-            src="src/assets/instagram.png"
+            src="./src/assets/instagram.png"
             alt="Instagram icon"
           />
-          <img className={styles.icon} src="src/assets/x.png" alt="X icon" />
+          <img className={styles.icon} src="./src/assets/x.png" alt="X icon" />
           <img
             className={styles.icon}
-            src="src/assets/facebook.png"
+            src="./src/assets/facebook.png"
             alt="Facebook icon"
           />
           <img
             className={styles.icon}
-            src="src/assets/tiktok.png"
+            src="./src/assets/tiktok.png"
             alt="Tiktok icon"
           />
         </div>
