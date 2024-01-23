@@ -70,3 +70,25 @@ The first thing I needed to do was to brainstorm what my fake online store was g
 As usual, I started a design mockup of my fake online store (in Figma) to get a clear image of what I wanted the final product to look like. I went with a very simple colour palette which uses black as the background colour, white as the foreground, and a dark sky blue for an accent colour.
 
 I've also constructed a basic header and a functional navigation bar to start off the code of this project.
+
+## To-Do
+
+### High Priority
+
+- Allow user to add a product with a specified quantity and format to the cart
+- Allow user to favourite products
+- Store cart items in Firestore database
+- Store favourited items in Firestore database
+
+### Medium Priority
+
+- Add animation and intervals to switching images in carousel
+- Add content to Returns page
+- Add content to Privacy Policy page
+- Add content to Terms of Service page
+- Make subscription form in footer functional
+
+### Low Priority
+
+- Change icons in navbar to be filled icons when link is active
+- Create an administrator portal to perform CRUD tasks on Firestore database
