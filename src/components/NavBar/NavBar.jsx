@@ -16,6 +16,20 @@ const NavBar = () => {
       <NavLink className={linkStyles} to="/products">
         Products
       </NavLink>
+      <NavLink className={linkStyles} to="/favourites">
+        <img
+          className={styles.icon}
+          src="../src/assets/favourite.png"
+          alt="Favourites icon"
+        />
+      </NavLink>
+      <NavLink className={linkStyles} to="/cart">
+        <img
+          className={styles.icon}
+          src="../src/assets/cart.png"
+          alt="Cart icon"
+        />
+      </NavLink>
     </nav>
   );
 };

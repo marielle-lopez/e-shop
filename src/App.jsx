@@ -13,6 +13,8 @@ import ReturnsPage from "./pages/ReturnsPage/ReturnsPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage/PrivacyPolicyPage";
 import TermsOfServicePage from "./pages/TermsOfServicePage/TermsOfServicePage";
 import ProductPage from "./pages/ProductPage/ProductPage";
+import FavouritesPage from "./pages/FavouritesPage/FavouritesPage";
+import CartPage from "./pages/CartPage/CartPage";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/products" element={<ProductsPage />} />
+              <Route path="/favourites" element={<FavouritesPage />} />
+              <Route path="/cart" element={<CartPage />} />
               <Route path="/product/:id" element={<ProductPage />} />
               <Route path="/returns" element={<ReturnsPage />} />
               <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
