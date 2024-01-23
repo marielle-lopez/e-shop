@@ -48,6 +48,8 @@ https://dribbble.com/shots/23222296-Vogue-Ecommerce-of-clothing-and-footwear
 
 - Added additional products to Firestore database
 - Made each product card a link to a corresponding product page via React Router DOM
+- Added foundational content to display in produce page component
+- Created context for cart
 
 ### January 22, 2024
 
