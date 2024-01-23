@@ -1,7 +1,8 @@
 import styles from "./ProductPage.module.scss";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { getProductById } from "../../services/products";
+import { CartContext } from "../../context/CartContextProvider/CartContextProvider";
 
 const ProductPage = () => {
   const pathVariables = useParams();
@@ -9,6 +10,7 @@ const ProductPage = () => {
 
   const [product, setProduct] = useState(null);
   const [selectedFormat, setSelectedFormat] = useState(null);
+  const { cart, setCart } = useContext(CartContext);
 
   useEffect(() => {
     getProductById(id).then((response) => {
