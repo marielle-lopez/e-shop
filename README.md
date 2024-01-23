@@ -62,6 +62,8 @@ Today, I was able to create a product page to display a selected user-selected p
 
 I've also added pages for favourited products and the user's shopping cart with corresponding buttons in the navigation bar. The 'Cart' page in particular displays information fetched from the Firestore database; via a function that grabs information in the 'cart' collection. The next step is to figure out how I want to properly store cart items in the Firestore database. This'll probably involve me having to sketch out a schema.
 
+One of the small tasks I completed was styling the overlaying information of the carousel component. I found that PNG images cannot have a drop shadow applied to the image itself; it was applying around the border of the image instead. I managed to fix this with the help of this [Stack Overflow post](https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css).
+
 The next big milestone to reach is a fully functional shopping cart feature. This would entail a user being able to add a specific audio format of a product to their cart, and allowing them to add a user-specified quantity.
 
 ### January 22, 2024
