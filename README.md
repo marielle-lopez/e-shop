@@ -44,6 +44,11 @@ https://dribbble.com/shots/23222296-Vogue-Ecommerce-of-clothing-and-footwear
 
 ## Task Completion History
 
+### January 23, 2024
+
+- Added additional products to Firestore database
+- Made each product card a link to a corresponding product page via React Router DOM
+
 ### January 22, 2024
 
 - Constructed a basic and function carousel component

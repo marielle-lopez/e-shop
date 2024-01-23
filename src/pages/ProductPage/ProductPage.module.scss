@@ -1,0 +1,17 @@
+.wrapper {
+  display: flex;
+}
+
+.img {
+  width: 400px;
+}
+
+.product {
+  &_title {
+    font-size: 64px;
+  }
+
+  &_artist {
+    opacity: 50%;
+  }
+}
