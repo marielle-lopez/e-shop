@@ -6,6 +6,9 @@ import {
   where,
   doc,
   getDoc,
+  updateDoc,
+  arrayUnion,
+  arrayRemove,
 } from "firebase/firestore";
 
 export const getAllProducts = async () => {
@@ -45,4 +48,38 @@ export const getProductById = async (id) => {
   }
 
   throw new Error("Sorry, the product you're looking for doesn't exist.");
+};
+
+export const adjustProductQty = async (
+  id,
+  format,
+  img,
+  isOnSale,
+  price,
+  oldQty,
+  newQty
+) => {
+  const docRef = doc(db, "products", id);
+
+  await updateDoc(docRef, {
+    audioFormats: arrayRemove({
+      format: format,
+      img: img,
+      isOnSale: isOnSale,
+      price: price,
+      qty: oldQty,
+    }),
+  });
+
+  await updateDoc(docRef, {
+    audioFormats: arrayUnion({
+      format: format,
+      img: img,
+      isOnSale: isOnSale,
+      price: price,
+      qty: newQty,
+    }),
+  });
+
+  console.log("Adjusted product quantity.");
 };
