@@ -1,5 +1,11 @@
+import PaddingWrapper from "../../containers/PaddingWrapper/PaddingWrapper";
+
 const FavouritesPage = () => {
-  return <main>Favourites</main>;
+  return (
+    <PaddingWrapper>
+      <main>Favourites</main>
+    </PaddingWrapper>
+  );
 };
 
 export default FavouritesPage;

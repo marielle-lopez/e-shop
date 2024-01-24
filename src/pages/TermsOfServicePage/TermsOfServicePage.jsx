@@ -1,5 +1,11 @@
+import PaddingWrapper from "../../containers/PaddingWrapper/PaddingWrapper";
+
 const TermsOfServicePage = () => {
-  return <main>TermsOfServicePage</main>;
+  return (
+    <PaddingWrapper>
+      <main>TermsOfServicePage</main>
+    </PaddingWrapper>
+  );
 };
 
 export default TermsOfServicePage;

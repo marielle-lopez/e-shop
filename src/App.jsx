@@ -14,6 +14,7 @@ import TermsOfServicePage from "./pages/TermsOfServicePage/TermsOfServicePage";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import FavouritesPage from "./pages/FavouritesPage/FavouritesPage";
 import CartPage from "./pages/CartPage/CartPage";
+import PaddingWrapper from "./containers/PaddingWrapper/PaddingWrapper";
 
 function App() {
   return (
@@ -35,7 +36,9 @@ function App() {
                 element={<TermsOfServicePage />}
               />
             </Routes>
-            <Footer />
+            <PaddingWrapper>
+              <Footer />
+            </PaddingWrapper>
           </BrowserRouter>
         </ProductsContextProvider>
       </CartContextProvider>

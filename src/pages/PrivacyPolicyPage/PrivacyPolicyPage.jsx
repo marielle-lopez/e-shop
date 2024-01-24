@@ -1,5 +1,11 @@
+import PaddingWrapper from "../../containers/PaddingWrapper/PaddingWrapper";
+
 const PrivacyPolicyPage = () => {
-  return <main>PrivacyPolicyPage</main>;
+  return (
+    <PaddingWrapper>
+      <main>PrivacyPolicyPage</main>
+    </PaddingWrapper>
+  );
 };
 
 export default PrivacyPolicyPage;

@@ -1,5 +1,11 @@
+import PaddingWrapper from "../../containers/PaddingWrapper/PaddingWrapper";
+
 const ReturnsPage = () => {
-  return <main>ReturnsPage</main>;
+  return (
+    <PaddingWrapper>
+      <main>ReturnsPage</main>
+    </PaddingWrapper>
+  );
 };
 
 export default ReturnsPage;
