@@ -1,21 +1,35 @@
-import { useRef } from "react";
+import styles from "./SubscribeForm.module.scss";
+import { useState } from "react";
+import Button from "../Button/Button";
 
 const SubscribeForm = () => {
-  const inputRef = useRef(null);
+  const [email, setEmail] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const currentInput = inputRef.current.value;
+  const handleSubmit = () => {
+    if (email === "") {
+      return;
+    }
+
+    console.log("Email sent!");
+    setEmail("");
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.wrapper}>
       <input
+        className={styles.input}
         type="email"
-        ref={inputRef}
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
         placeholder="Enter your email address"
       />
-      <button type="submit">Subscribe</button>
+      <Button
+        text="Subscribe"
+        variant="primary"
+        size="small"
+        handleClick={handleSubmit}
+        fnParams={email}
+      />
     </form>
   );
 };
