@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import styles from "./HomePage.module.scss";
-import { getAllCartItems } from "../../services/cart";
+import { getAllCartItems } from "/services/cart";
 
 import Carousel from "../../components/Carousel/Carousel";
-import { getFeaturedProducts } from "../../services/products";
+import { getFeaturedProducts } from "/services/products";
 import { CartContext } from "../../context/CartContextProvider/CartContextProvider";
 
 const HomePage = () => {

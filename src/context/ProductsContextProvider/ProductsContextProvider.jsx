@@ -1,5 +1,4 @@
-import { createContext, useEffect, useState } from "react";
-import { getAllProducts } from "../../services/products";
+import { createContext, useState } from "react";
 
 export const ProductsContext = createContext(null);
 

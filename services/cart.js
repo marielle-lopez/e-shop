@@ -5,7 +5,7 @@ import {
   deleteDoc,
   doc,
 } from "firebase/firestore";
-import { db } from "../config/firebase";
+import { db } from "/src/config/firebase";
 
 export const getAllCartItems = async () => {
   const querySnapshot = await getDocs(collection(db, "cart"));

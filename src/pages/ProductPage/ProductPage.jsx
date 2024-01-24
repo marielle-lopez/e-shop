@@ -1,8 +1,8 @@
 import styles from "./ProductPage.module.scss";
 import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { getProductById, adjustProductQty } from "../../services/products";
-import { addItemToCart } from "../../services/cart";
+import { getProductById, adjustProductQty } from "/services/products";
+import { addItemToCart } from "/services/cart";
 
 import { CartContext } from "../../context/CartContextProvider/CartContextProvider";
 

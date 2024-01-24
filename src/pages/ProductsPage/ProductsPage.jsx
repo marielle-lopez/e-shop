@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import ProductsList from "../../containers/ProductsList/ProductsList";
 import { ProductsContext } from "../../context/ProductsContextProvider/ProductsContextProvider";
-import { getAllProducts } from "../../services/products";
+import { getAllProducts } from "/services/products";
 import PaddingWrapper from "../../containers/PaddingWrapper/PaddingWrapper";
 
 const ProductsPage = () => {

@@ -1,7 +1,7 @@
 import styles from "./CartItemsList.module.scss";
 import CartItemCard from "../../components/CartItemCard/CartItemCard";
-import { removeItemFromCart } from "../../services/cart";
-import { adjustProductQty } from "../../services/products";
+import { removeItemFromCart } from "/services/cart";
+import { adjustProductQty } from "/services/products";
 
 const CartItemsList = ({ items }) => {
   return (
