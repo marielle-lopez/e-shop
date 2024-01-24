@@ -43,7 +43,11 @@ const Carousel = ({ data }) => {
             </p>
           </div>
           <Link to={`/product/${data[index].id}`}>
-            <Button text="See available audio formats" />
+            <Button
+              text="See available audio formats"
+              variant="primary"
+              size="large"
+            />
           </Link>
         </section>
 
