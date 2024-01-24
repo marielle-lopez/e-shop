@@ -3,11 +3,15 @@ import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { getProductById } from "../../services/products";
 import { CartContext } from "../../context/CartContextProvider/CartContextProvider";
+import Button from "../../components/Button/Button";
+import NumberInput from "../../components/NumberInput/NumberInput";
+import PaddingWrapper from "../../containers/PaddingWrapper/PaddingWrapper";
 
 const ProductPage = () => {
   const pathVariables = useParams();
   const id = pathVariables.id;
 
+  const [qty, setQty] = useState(1);
   const [product, setProduct] = useState(null);
   const [selectedFormat, setSelectedFormat] = useState(null);
   const { cart, setCart } = useContext(CartContext);
@@ -19,32 +23,56 @@ const ProductPage = () => {
     });
   }, []);
 
+  useEffect(() => {
+    setQty(1);
+  }, [selectedFormat]);
+
   return (
-    <main>
-      {product && selectedFormat && (
-        <div className={styles.wrapper}>
-          <img
-            className={styles.img}
-            src={selectedFormat.img}
-            alt={`${selectedFormat.format} of ${product.title} by ${product.artist}`}
-          />
-          <div className={styles.product_details}>
-            <h2 className={styles.product_title}>{product.title}</h2>
-            <p className={styles.product_artist}>by {product.artist}</p>
-            <p className={styles.product_price}>${selectedFormat.price}</p>
-            {product.audioFormats &&
-              product.audioFormats.map((format) => (
-                <button>{format.format}</button>
-              ))}
-            <p>Quantity</p>
-            <button>-</button>
-            <input type="number" min="1" disabled />
-            <button>+</button>
-            <button disabled={false}>Add to cart</button>
+    <PaddingWrapper>
+      <main>
+        {product && selectedFormat && (
+          <div className={styles.wrapper}>
+            <img
+              className={styles.img}
+              src={selectedFormat.img}
+              alt={`${selectedFormat.format} of ${product.title} by ${product.artist}`}
+            />
+            <div className={styles.product_details}>
+              <h2 className={styles.product_title}>{product.title}</h2>
+              <p className={styles.product_artist}>by {product.artist}</p>
+              <p className={styles.product_price}>${selectedFormat.price}</p>
+              {product.audioFormats &&
+                product.audioFormats.map((format, i) => (
+                  <Button
+                    key={format.format}
+                    handleClick={setSelectedFormat}
+                    fnParams={product.audioFormats[i]}
+                    text={format.format}
+                    variant={
+                      selectedFormat.format === format.format
+                        ? "primary"
+                        : "inactive"
+                    }
+                    size="small"
+                  />
+                ))}
+              <p>Quantity</p>
+              <div>
+                <NumberInput
+                  min={1}
+                  max={selectedFormat.qty}
+                  qty={qty}
+                  setQty={setQty}
+                />
+              </div>
+              <button className={styles.addToCart_btn} disabled={false}>
+                Add to cart
+              </button>
+            </div>
           </div>
-        </div>
-      )}
-    </main>
+        )}
+      </main>
+    </PaddingWrapper>
   );
 };
 
