@@ -50,6 +50,14 @@ https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/bb145c57779427.59e3bc
 
 ## Task Completion History
 
+### January 24, 2024
+
+- Linked button in carousel to corresponding product page
+- Made audio format buttons on product page functional and applied styling depending on whether the audio format is or isn't selected
+- Created and styled NumberInput component that has a minimum and maximum input value based on the available quantity of the selected product
+
+I've managed to make the buttons representing the available audio formats of a product functional. When on a specific product page, clicking a different audio format displays it's corresponding price!
+
 ### January 23, 2024
 
 - Added additional products to Firestore database
@@ -98,6 +106,8 @@ I've also constructed a basic header and a functional navigation bar to start of
 
 ### Medium Priority
 
+- Format prices to 2 decimal places
+- Create an enum for button variants and sizes
 - Add animation and intervals to switching images in carousel
 - Add content to Returns page
 - Add content to Privacy Policy page
