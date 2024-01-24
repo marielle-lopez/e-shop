@@ -56,7 +56,7 @@ https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/bb145c57779427.59e3bc
 - Made audio format buttons on product page functional and applied styling depending on whether the audio format is or isn't selected
 - Created and styled NumberInput component that has a minimum and maximum input value based on the available quantity of the selected product
 
-I've managed to make the buttons representing the available audio formats of a product functional. When on a specific product page, clicking a different audio format displays it's corresponding price!
+I've managed to make the buttons representing the available audio formats of a product functional. When on a specific product page, clicking a different audio format displays it's corresponding price. I've also created a re-usable NumberInput component to deal with quantities. Additionally, I added a wrapper component, PaddingWrapper, to mimic the spacing of content as designed in my mockup.
 
 ### January 23, 2024
 
