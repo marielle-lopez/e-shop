@@ -1,8 +1,11 @@
 import styles from "./ProductPage.module.scss";
 import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { getProductById } from "../../services/products";
+import { getProductById, adjustProductQty } from "../../services/products";
+import { addItemToCart } from "../../services/cart";
+
 import { CartContext } from "../../context/CartContextProvider/CartContextProvider";
+
 import Button from "../../components/Button/Button";
 import NumberInput from "../../components/NumberInput/NumberInput";
 import PaddingWrapper from "../../containers/PaddingWrapper/PaddingWrapper";
@@ -26,6 +29,29 @@ const ProductPage = () => {
   useEffect(() => {
     setQty(1);
   }, [selectedFormat]);
+
+  const handleAddToCart = () => {
+    console.log(selectedFormat);
+    adjustProductQty(
+      id,
+      selectedFormat.format,
+      selectedFormat.img,
+      selectedFormat.isOnSale,
+      selectedFormat.price,
+      selectedFormat.qty,
+      selectedFormat.qty - qty
+    );
+    addItemToCart(
+      id,
+      product.title,
+      product.artist,
+      selectedFormat.format,
+      selectedFormat.img,
+      selectedFormat.price,
+      qty,
+      selectedFormat.qty - qty
+    );
+  };
 
   return (
     <PaddingWrapper>
@@ -65,7 +91,11 @@ const ProductPage = () => {
                   setQty={setQty}
                 />
               </div>
-              <button className={styles.addToCart_btn} disabled={false}>
+              <button
+                onClick={handleAddToCart}
+                className={styles.addToCart_btn}
+                disabled={false}
+              >
                 Add to cart
               </button>
             </div>
