@@ -2,12 +2,27 @@
 
 .btn {
   width: fit-content;
-  padding: 15px 20px;
-
   color: white;
-  font-size: 16px;
-  background-color: palette.$accent-color;
   border: none;
-  border-radius: 25px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+.primary {
+  background-color: palette.$accent-color;
+}
+
+.inactive {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.small {
+  padding: 10px 20px;
+  box-shadow: none;
+  border-radius: 25px;
+}
+
+.large {
+  padding: 15px 20px;
+  border-radius: 25px;
+  font-size: 16px;
 }
