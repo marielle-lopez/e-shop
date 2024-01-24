@@ -4,6 +4,7 @@ import {
   addDoc,
   deleteDoc,
   doc,
+  onSnapshot,
 } from "firebase/firestore";
 import { db } from "/src/config/firebase";
 
@@ -15,8 +16,6 @@ export const getAllCartItems = async () => {
       ...doc.data(),
     };
   });
-
-  console.log(data);
 
   return data;
 };
@@ -50,4 +49,18 @@ export const removeItemFromCart = async (cartItemId) => {
   await deleteDoc(doc(db, "cart", cartItemId));
 
   console.log(`Cart item with ID ${cartItemId} removed from cart.`);
+};
+
+export const subscribeToCart = (callback) => {
+  const collectionRef = collection(db, "cart");
+  const unsubscribe = onSnapshot(collectionRef, (querySnapshot) => {
+    const cartData = querySnapshot.docs.map((doc) => {
+      return {
+        id: doc.id,
+        ...doc.data(),
+      };
+    });
+    callback(cartData);
+  });
+  return unsubscribe;
 };
