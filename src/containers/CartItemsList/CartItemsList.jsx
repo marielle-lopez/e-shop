@@ -8,7 +8,7 @@ const CartItemsList = ({ items }) => {
     <div className={styles.wrapper}>
       {items &&
         items.map((item) => (
-          <div className={styles.card_wrapper}>
+          <div key={item.id + "_div"} className={styles.card_wrapper}>
             <CartItemCard
               key={item.id}
               productId={item.productId}
