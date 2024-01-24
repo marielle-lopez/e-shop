@@ -17,7 +17,11 @@ const CartPage = () => {
     <PaddingWrapper>
       <main>
         <h2>Cart</h2>
-        {cart && <CartItemsList items={cart} />}
+        {cart.length !== 0 ? (
+          <CartItemsList items={cart} />
+        ) : (
+          <p>Your shopping cart is empty.</p>
+        )}
       </main>
     </PaddingWrapper>
   );

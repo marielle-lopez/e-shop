@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState } from "react";
 import styles from "./HomePage.module.scss";
+import { useContext, useEffect, useState } from "react";
 import { getAllCartItems } from "/services/cart";
 
 import Carousel from "../../components/Carousel/Carousel";

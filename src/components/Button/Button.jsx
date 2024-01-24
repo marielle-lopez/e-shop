@@ -1,6 +1,12 @@
 import styles from "./Button.module.scss";
 
-const Button = ({ text, variant, size, handleClick, fnParams = null }) => {
+const Button = ({
+  text,
+  variant,
+  size,
+  handleClick = null,
+  fnParams = null,
+}) => {
   let btnVariant = variant === "primary" ? styles.primary : styles.secondary;
   let btnSize;
 
@@ -31,15 +37,21 @@ const Button = ({ text, variant, size, handleClick, fnParams = null }) => {
   const stylesArr = [styles.btn, btnVariant, btnSize];
 
   return (
-    <button
-      onClick={(e) => {
-        e.preventDefault();
-        handleClick(fnParams);
-      }}
-      className={stylesArr.join(" ")}
-    >
-      {text}
-    </button>
+    <>
+      {handleClick ? (
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            handleClick(fnParams);
+          }}
+          className={stylesArr.join(" ")}
+        >
+          {text}
+        </button>
+      ) : (
+        <button className={stylesArr.join(" ")}>{text}</button>
+      )}
+    </>
   );
 };
 
