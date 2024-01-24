@@ -1,3 +1,5 @@
+@use "../../styles/partials/palette";
+
 .wrapper {
   display: flex;
 }
@@ -14,4 +16,14 @@
   &_artist {
     opacity: 50%;
   }
+}
+
+.addToCart_btn {
+  width: 100%;
+  padding: 10px;
+
+  color: white;
+  background-color: palette.$accent-color;
+  border: none;
+  border-radius: 25px;
 }
