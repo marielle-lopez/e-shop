@@ -1,25 +1,24 @@
 import styles from "./CartItemCard.module.scss";
 
 const CartItemCard = ({
-  id = 0,
-  format = 0,
-  title = 0,
-  img = "",
-  qty = 0,
-  unitPrice = 0,
-  totalPrice = 0,
+  productId = "Unknown",
+  format = "Unknown",
+  title = "Unknown",
+  artist = "Unknown",
+  img = "../src/assets/placeholder.png",
+  qty = "Unknown",
+  unitPrice = "Unknown",
+  totalPrice = "Unknown",
 }) => {
   return (
     <div className={styles.wrapper}>
-      <img
-        className={styles.img}
-        src="../src/assets/placeholder.png"
-        alt={`${title} cover`}
-      />
+      <img className={styles.img} src={img} alt={`${title} cover`} />
       <div className={styles.info}>
         <div>
-          <h3 className={styles.title}>{title}</h3>
-          <p className={styles.id}>{id}</p>
+          <h3 className={styles.title}>
+            {title} by {artist}
+          </h3>
+          <p className={styles.id}>{productId}</p>
         </div>
         <p>{format}</p>
         <p>{qty}</p>
