@@ -55,8 +55,13 @@ https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/bb145c57779427.59e3bc
 - Linked button in carousel to corresponding product page
 - Made audio format buttons on product page functional and applied styling depending on whether the audio format is or isn't selected
 - Created and styled NumberInput component that has a minimum and maximum input value based on the available quantity of the selected product
+- Created functions to add and remove products to cart from the product page
 
 I've managed to make the buttons representing the available audio formats of a product functional. When on a specific product page, clicking a different audio format displays it's corresponding price. I've also created a re-usable NumberInput component to deal with quantities. Additionally, I added a wrapper component, PaddingWrapper, to mimic the spacing of content as designed in my mockup.
+
+I've hit a milestone - I was able to implement the shopping cart feature, but it needs to be refined. The cart items rendered on the cart page immediately update the database and the cart page itself. At the moment however, if the same audio format of a product is added to the cart, and if that particular audio format of the product already exists in the cart, it doesn't adjust the quantity. It insteads renders a new cart item card. This is because in the database, a new cart item is generated instead of checking if the same product and its audio format already exists in the database.
+
+The next step is to get the product information (specially the quantities of each available audio format) to display real-time quantities. I also need to consider other cases such as out-of-stock items and items that are not yet available for sale.
 
 ### January 23, 2024
 
@@ -98,6 +103,8 @@ I've also constructed a basic header and a functional navigation bar to start of
 
 ### High Priority
 
+- Add placeholder images
+- Add loading states
 - Sketch a schema for cart items
 - Allow user to add a product with a specified quantity and format to the cart
 - Allow user to favourite products
