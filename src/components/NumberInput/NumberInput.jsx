@@ -18,8 +18,6 @@ const NumberInput = ({ min, max, qty, setQty }) => {
     setQty(qty + 1);
   };
 
-  console.log("Re-rendered: ", qty);
-
   return (
     <>
       <button onClick={handleDecrement} className={styles.decrement_btn}>
