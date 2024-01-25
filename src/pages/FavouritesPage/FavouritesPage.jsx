@@ -1,9 +1,12 @@
+import PageHeading from "../../components/PageHeading/PageHeading";
 import PaddingWrapper from "../../containers/PaddingWrapper/PaddingWrapper";
 
 const FavouritesPage = () => {
   return (
     <PaddingWrapper>
-      <main>Favourites</main>
+      <main>
+        <PageHeading>Favourites</PageHeading>
+      </main>
     </PaddingWrapper>
   );
 };
