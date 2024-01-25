@@ -11,9 +11,15 @@
     color: white;
     text-decoration: none;
 
+    transition: 0.3s;
+
     &__active {
       padding: 5px 5px 0 5px;
       border-top: 3px solid palette.$accent-color;
+    }
+
+    &:hover {
+      color: palette.$accent-color;
     }
   }
 }
@@ -21,6 +27,12 @@
 .icon {
   padding-top: -5px;
   width: 30px;
+  filter: grayscale(1) brightness(2);
+  transition: 0.3s;
+
+  &:hover {
+    filter: grayscale(0) brightness(1);
+  }
 }
 
 .text_items {
