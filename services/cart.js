@@ -17,6 +17,8 @@ export const getAllCartItems = async () => {
     };
   });
 
+  console.log("Retrieved all cart items.");
+
   return data;
 };
 
@@ -60,6 +62,7 @@ export const subscribeToCart = (callback) => {
         ...doc.data(),
       };
     });
+    console.log("Retrieved cart data.");
     callback(cartData);
   });
   return unsubscribe;

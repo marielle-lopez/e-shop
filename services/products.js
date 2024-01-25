@@ -14,6 +14,8 @@ import {
 export const getAllProducts = async () => {
   const querySnapshot = await getDocs(collection(db, "products"));
   const data = querySnapshot.docs.map((doc) => {
+    console.log("Retrieved all products.");
+
     return {
       id: doc.id,
       ...doc.data(),
@@ -27,6 +29,8 @@ export const getFeaturedProducts = async () => {
   const q = query(collection(db, "products"), where("isFeatured", "==", true));
   const querySnapshot = await getDocs(q);
   const data = querySnapshot.docs.map((doc) => {
+    console.log("Retrieved featured products.");
+
     return {
       id: doc.id,
       ...doc.data(),
@@ -41,6 +45,8 @@ export const getProductById = async (id) => {
   const docSnap = await getDoc(docRef);
 
   if (docSnap.exists()) {
+    console.log("Retrieved product with ID: ", id);
+
     return {
       id: id,
       ...docSnap.data(),
