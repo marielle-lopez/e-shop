@@ -3,6 +3,7 @@
 
 .wrapper {
   display: flex;
+  padding: 0 5vw;
 }
 
 .img {
@@ -10,8 +11,16 @@
 }
 
 .product {
+  &_details {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    gap: 20px;
+  }
+
   &_title {
     font-size: 64px;
+    margin-bottom: 0;
   }
 
   &_artist {
@@ -20,7 +29,7 @@
 }
 
 .addToCart_btn {
-  width: 100%;
+  width: 300px;
   padding: 10px;
 
   font-family: typography.$main-font;
@@ -34,4 +43,9 @@
   &:hover {
     background-color: palette.$primary-btn-hover-color;
   }
+}
+
+.formats_wrapper {
+  display: flex;
+  gap: 10px;
 }

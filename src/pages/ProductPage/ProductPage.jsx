@@ -55,41 +55,51 @@ const ProductPage = () => {
 
   return (
     <PaddingWrapper>
-      <main>
+      <main className={styles.wrapper}>
         {product && selectedFormat && (
-          <div className={styles.wrapper}>
+          <>
             <img
               className={styles.img}
               src={selectedFormat.img}
               alt={`${selectedFormat.format} of ${product.title} by ${product.artist}`}
             />
             <div className={styles.product_details}>
-              <h2 className={styles.product_title}>{product.title}</h2>
-              <p className={styles.product_artist}>by {product.artist}</p>
-              <p className={styles.product_price}>${selectedFormat.price}</p>
-              {product.audioFormats &&
-                product.audioFormats.map((format, i) => (
-                  <Button
-                    key={format.format}
-                    handleClick={setSelectedFormat}
-                    fnParams={product.audioFormats[i]}
-                    text={format.format}
-                    variant={
-                      selectedFormat.format === format.format
-                        ? "primary"
-                        : "inactive"
-                    }
-                    size="small"
-                  />
-                ))}
-              <p>Quantity</p>
               <div>
-                <NumberInput
-                  min={1}
-                  max={selectedFormat.qty}
-                  qty={qty}
-                  setQty={setQty}
-                />
+                <h2 className={styles.product_title}>{product.title}</h2>
+                <p className={styles.product_artist}>by {product.artist}</p>
+              </div>
+
+              <div>
+                <p className={styles.product_price}>${selectedFormat.price}</p>
+                <div className={styles.formats_wrapper}>
+                  {product.audioFormats &&
+                    product.audioFormats.map((format, i) => (
+                      <Button
+                        key={format.format}
+                        handleClick={setSelectedFormat}
+                        fnParams={product.audioFormats[i]}
+                        text={format.format}
+                        variant={
+                          selectedFormat.format === format.format
+                            ? "primary"
+                            : "inactive"
+                        }
+                        size="small"
+                      />
+                    ))}
+                </div>
+              </div>
+
+              <div>
+                <p>Quantity</p>
+                <div>
+                  <NumberInput
+                    min={1}
+                    max={selectedFormat.qty}
+                    qty={qty}
+                    setQty={setQty}
+                  />
+                </div>
               </div>
               <button
                 onClick={handleAddToCart}
@@ -99,7 +109,7 @@ const ProductPage = () => {
                 Add to cart
               </button>
             </div>
-          </div>
+          </>
         )}
       </main>
     </PaddingWrapper>
