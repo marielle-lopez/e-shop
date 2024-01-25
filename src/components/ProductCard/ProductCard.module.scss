@@ -1,10 +1,14 @@
 .wrapper {
   display: flex;
   flex-direction: column;
+  padding: 15px;
   width: 175px;
+  transition: 0.3s;
 
-  // background-color: rgba(255, 255, 255, 0.1);
-  // border-radius: 15px;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+  }
 }
 
 .link {
@@ -14,8 +18,6 @@
 
 .img {
   width: 175px;
-
-  // border-radius: 15px 15px 0 0;
 }
 
 .title {
