@@ -58,7 +58,9 @@ https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/bb145c57779427.59e3bc
 
 There appears to be a bug with the email input in the footer. For some reason, you can't directly click on it to enter input. I utilised the element selector feature in the 'Inspect' view on my browser - it turns out that the overlaying carousel content lays on top of the email input. To fix this, I adjusted the carousel content wrapper height to match that of the carousel image.
 
-Interestingly, I reached the quota on my database, so I had to create backup one to work with to continue developing. I will admit that my original database has a lot of data, and it doesn't help that I have two listeners constantly watching for changes in my database. So, my backup database contains much less data (only 2 products). I'd like to see if I can reduce the amount of reads from my original database, but I shall make it my next goal for now.
+Interestingly, I reached the quota on my database, so I had to create backup one to work with to continue developing. I will admit that my original database has a lot of data, and it doesn't help that I have a listener constantly watching for changes in my cart collection. So, my backup database contains much less data (only 2 products). I'd like to see if I can reduce the amount of reads from my original database and to help cut my reads and writes in half, I turned off Strict Mode.
+
+I placed `console.log()` statements in each function that requests to interact with the database and found that the listener for cart data was being called many, many time - the quota drainer.
 
 ### January 24, 2024
 
@@ -113,14 +115,13 @@ I've also constructed a basic header and a functional navigation bar to start of
 
 ### High Priority
 
+- Refactor styling of footer icons
 - Display real-time product quantities, especially when the user adds items to the cart
+- Adjust quantity of product in cart if user adds a product that already exists in the cart
 - Add placeholder images
 - Add loading states
 - Add error handling
-- Sketch a schema for cart items
-- Allow user to add a product with a specified quantity and format to the cart
 - Allow user to favourite products
-- Store cart items in Firestore database
 - Store favourited items in Firestore database
 
 ### Medium Priority
