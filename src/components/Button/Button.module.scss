@@ -11,10 +11,20 @@
 
 .primary {
   background-color: palette.$accent-color;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: palette.$primary-btn-hover-color;
+  }
 }
 
 .inactive {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: palette.$inactive-color;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: palette.$inactive-btn-hover-color;
+  }
 }
 
 .small {
