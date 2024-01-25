@@ -6,6 +6,8 @@
 
 - Krona One
   - https://fonts.google.com/specimen/Krona+One
+- Inter
+  - https://fonts.google.com/specimen/Inter
 
 ### Icons
 
@@ -55,8 +57,11 @@ https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/bb145c57779427.59e3bc
 - Fixed a bug with the Button component when a prop function wasn't passed
 - Added hover animations to links and buttons
 - Created a backup database to use when quota on original database is reached
+- Utilised ChatGPT to generate content for the Returns, Privacy Policy, and Terms of Service pages
 
 There appears to be a bug with the email input in the footer. For some reason, you can't directly click on it to enter input. I utilised the element selector feature in the 'Inspect' view on my browser - it turns out that the overlaying carousel content lays on top of the email input. To fix this, I adjusted the carousel content wrapper height to match that of the carousel image.
+
+I also changed the primary font of the application to Inter, which fit the aesthetic I was after better than Helvetica did.
 
 Interestingly, I reached the quota on my database, so I had to create backup one to work with to continue developing. I will admit that my original database has a lot of data, and it doesn't help that I have a listener constantly watching for changes in my cart collection. So, my backup database contains much less data (only 2 products). I'd like to see if I can reduce the amount of reads from my original database and to help cut my reads and writes in half, I turned off Strict Mode.
 
@@ -115,6 +120,7 @@ I've also constructed a basic header and a functional navigation bar to start of
 
 ### High Priority
 
+- Add informative message when user adds or removes items from cart
 - Refactor styling of footer icons
 - Display real-time product quantities, especially when the user adds items to the cart
 - Adjust quantity of product in cart if user adds a product that already exists in the cart
@@ -126,17 +132,17 @@ I've also constructed a basic header and a functional navigation bar to start of
 
 ### Medium Priority
 
+- Add contact information to footer
 - Format prices to 2 decimal places
 - Create an enum for button variants and sizes
 - Add animation and intervals to switching images in carousel
-- Add content to Returns page
-- Add content to Privacy Policy page
-- Add content to Terms of Service page
 - Make subscription form in footer functional
+- Create a Contact page
 
 ### Low Priority
 
 - Format and re-structure 'Resources' section of `README.md` file
 - Change icons in navbar to be filled icons when link is active
 - Create an administrator portal to perform CRUD tasks on Firestore database
-- Add hover effect to social media icons in footer
+- Allow for user to sign in and sign out
+- Add order history to user account
