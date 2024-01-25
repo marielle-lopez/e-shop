@@ -28,4 +28,10 @@
   background-color: palette.$accent-color;
   border: none;
   border-radius: 25px;
+
+  transition: 0.3s;
+
+  &:hover {
+    background-color: palette.$primary-btn-hover-color;
+  }
 }
