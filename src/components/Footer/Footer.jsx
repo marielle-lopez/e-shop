@@ -17,14 +17,18 @@ const Footer = () => {
             src="./src/assets/instagram.png"
             alt="Instagram icon"
           />
-          <img className={styles.icon} src="./src/assets/x.png" alt="X icon" />
+          <img
+            className={styles.icon__alt}
+            src="./src/assets/x.png"
+            alt="X icon"
+          />
           <img
             className={styles.icon}
             src="./src/assets/facebook.png"
             alt="Facebook icon"
           />
           <img
-            className={styles.icon}
+            className={styles.icon__alt}
             src="./src/assets/tiktok.png"
             alt="Tiktok icon"
           />
