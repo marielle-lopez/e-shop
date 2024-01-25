@@ -1,7 +1,10 @@
+@use "../../styles/partials/typography";
+
 .decrement_btn {
   width: 20px;
   height: 30px;
-
+  padding: 0 0 0 5px;
+  font-family: typography.$main-font;
   background-color: white;
   border: none;
   border-radius: 25px 0 0 25px;
@@ -14,7 +17,8 @@
 .increment_btn {
   width: 20px;
   height: 30px;
-
+  padding: 0 5px 0 0;
+  font-family: typography.$main-font;
   background-color: white;
   border: none;
   border-radius: 0 25px 25px 0;
@@ -26,7 +30,7 @@
 
 .input {
   height: 30px;
-
+  font-family: typography.$main-font;
   text-align: center;
   background-color: white;
   border: none;

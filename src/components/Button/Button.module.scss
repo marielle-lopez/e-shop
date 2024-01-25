@@ -1,7 +1,9 @@
 @use "../../styles/partials/palette";
+@use "../../styles/partials/typography";
 
 .btn {
   width: fit-content;
+  font-family: typography.$main-font;
   color: white;
   border: none;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);

@@ -1,4 +1,5 @@
 @use "../../styles/partials/palette";
+@use "../../styles/partials/typography";
 
 .wrapper {
   display: flex;
@@ -22,6 +23,7 @@
   width: 100%;
   padding: 10px;
 
+  font-family: typography.$main-font;
   color: white;
   background-color: palette.$accent-color;
   border: none;
