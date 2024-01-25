@@ -3,6 +3,7 @@ import ProductsList from "../../containers/ProductsList/ProductsList";
 import { ProductsContext } from "../../context/ProductsContextProvider/ProductsContextProvider";
 import { getAllProducts } from "/services/products";
 import PaddingWrapper from "../../containers/PaddingWrapper/PaddingWrapper";
+import PageHeading from "../../components/PageHeading/PageHeading";
 
 const ProductsPage = () => {
   const { products, setProducts } = useContext(ProductsContext);
@@ -16,7 +17,7 @@ const ProductsPage = () => {
   return (
     <PaddingWrapper>
       <main>
-        <h1>Products</h1>
+        <PageHeading>Products</PageHeading>
         {products && <ProductsList products={products} />}
       </main>
     </PaddingWrapper>

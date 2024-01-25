@@ -3,6 +3,7 @@ import { subscribeToCart } from "../../../services/cart";
 import { CartContext } from "../../context/CartContextProvider/CartContextProvider";
 import CartItemsList from "../../containers/CartItemsList/CartItemsList";
 import PaddingWrapper from "../../containers/PaddingWrapper/PaddingWrapper";
+import PageHeading from "../../components/PageHeading/PageHeading";
 
 const CartPage = () => {
   const { cart, setCart } = useContext(CartContext);
@@ -16,7 +17,7 @@ const CartPage = () => {
   return (
     <PaddingWrapper>
       <main>
-        <h2>Cart</h2>
+        <PageHeading>Your Shopping Cart</PageHeading>
         {cart.length !== 0 ? (
           <CartItemsList items={cart} />
         ) : (
