@@ -1,58 +1,39 @@
-# e-Shop
+# Sound
+
+Welcome to Sound, your trusted source for exceptional audio products. Find CDs, cassettes, and vinyls of music from the top global artists and order them right to your door with just the click of a button. Prefer to shop in-person? Find one of our stores near you.
 
 ## Resources
 
 ### Fonts
 
-- Krona One
-  - https://fonts.google.com/specimen/Krona+One
-- Inter
-  - https://fonts.google.com/specimen/Inter
+- [Krona One](https://fonts.google.com/specimen/Krona+One)
+- [Inter](https://fonts.google.com/specimen/Inter)
 
 ### Icons
 
-https://www.icons8.com
-
-- Vinyl
-  - https://icons8.com/icon/nkCsuxTboA0z/vinyl
-- Cart
-  - https://icons8.com/icon/zhda2EVBCvHY/cart
-  - https://icons8.com/icon/Vfx42bq0G2lJ/cart
-- Search
-  - https://img.icons8.com/sf-regular/48/000000/search.png
-- Favourite
-  - https://icons8.com/icon/64767/favourite
-  - https://icons8.com/icon/fzAoxIsUMv0P/favorite
-- Right chevron
-  - https://icons8.com/icon/85789/chevron
-- Left chevron
-  - https://icons8.com/icon/88110/chevron
-- Instagram
-  - https://icons8.com/icon/kfnjM4KPaLxk/instagram
-- X
-  - https://icons8.com/icon/yoQabS8l0qpr/twitterx
-- Facebook
-  - https://icons8.com/icon/8818/facebook
-- TikTok
-  - https://icons8.com/icon/118640/tiktok
-- Spotify
-  - https://icons8.com/icon/99983/spotify
-- Bin
-  - https://icons8.com/icon/nerFBdXcYDve/bin
+- [Vinyl](https://icons8.com/icon/nkCsuxTboA0z/vinyl)
+- [Cart](https://icons8.com/icon/zhda2EVBCvHY/cart)
+- [Search](https://img.icons8.com/sf-regular/48/000000/search.png)
+- [Favourite](https://icons8.com/icon/64767/favourite)
+- [Right chevron](https://icons8.com/icon/85789/chevron)
+- [Left chevron](https://icons8.com/icon/88110/chevron)
+- [Instagram](https://icons8.com/icon/kfnjM4KPaLxk/instagram)
+- [X](https://icons8.com/icon/yoQabS8l0qpr/twitterx)
+- [Facebook](https://icons8.com/icon/8818/facebook)
+- [TikTok](https://icons8.com/icon/118640/tiktok)
+- [Spotify](https://icons8.com/icon/99983/spotify)
+- [Bin](https://icons8.com/icon/nerFBdXcYDve/bin)
 
 ### Design Inspiration
 
-https://dribbble.com/shots/22395878-Vinyl-Records-E-Commerce-Store
-
-https://dribbble.com/shots/11037958-E-commerce-App-Dark-Mode
-
-https://dribbble.com/shots/23222296-Vogue-Ecommerce-of-clothing-and-footwear
-
-https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/bb145c57779427.59e3bcce5efa9.jpg
+- [Vinyl Records E-Commerce Store](https://dribbble.com/shots/22395878-Vinyl-Records-E-Commerce-Store) by Conceptzilla
+- [E-Commerce App Dark Mode](https://dribbble.com/shots/11037958-E-commerce-App-Dark-Mode) by Gagandeep Singh
+- [Vogue® - E-Commerce of Clothing and Footwear](https://dribbble.com/shots/23222296-Vogue-Ecommerce-of-clothing-and-footwear) by Haqqi Ilmiawan
+- [Shopping Cart UI](https://www.behance.net/gallery/57779427/Shopping-Cart-UI) by Nnamdi Awili
 
 ### Other
 
-- ChatGPT - https://chat.openai.com/
+- [ChatGPT](https://chat.openai.com/)
 
 ## Task Completion History
 
@@ -140,15 +121,16 @@ I've also constructed a basic header and a functional navigation bar to start of
 - Add error handling
 - Allow user to favourite products
 - Store favourited items in Firestore database
+- Add `config` directory to `.gitignore` file and mention in `README.md` for the read to request API key from project owner or to create their own Firestore service with a specific database schema
 
 ### Medium Priority
 
 - Add contact information to footer
-- Format prices to 2 decimal places
 - Create an enum for button variants and sizes
 - Add animation and intervals to switching images in carousel
 - Make subscription form in footer functional
 - Create a Contact page
+- Create an Our Stores page
 - Filter types of products
 - Display when a product is on sale, show the product's original price as well
 
@@ -159,3 +141,4 @@ I've also constructed a basic header and a functional navigation bar to start of
 - Create an administrator portal to perform CRUD tasks on Firestore database
 - Allow for user to sign in and sign out
 - Add order history to user account
+- Create a Careers page
