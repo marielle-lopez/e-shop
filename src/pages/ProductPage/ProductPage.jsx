@@ -70,7 +70,9 @@ const ProductPage = () => {
               </div>
 
               <div>
-                <p className={styles.product_price}>${selectedFormat.price}</p>
+                <p className={styles.product_price}>
+                  ${selectedFormat.price.toFixed(2)}
+                </p>
                 <div className={styles.formats_wrapper}>
                   {product.audioFormats &&
                     product.audioFormats.map((format, i) => (
