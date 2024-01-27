@@ -27,7 +27,7 @@ const Carousel = ({ data }) => {
   return (
     <>
       <div className={styles.arrows_wrapper}>
-        <button className={styles.button} onClick={handleDecrement}>
+        <button className={styles.chevron} onClick={handleDecrement}>
           <img
             className={styles.icon}
             src="src/assets/left-chevron.png"
@@ -51,7 +51,7 @@ const Carousel = ({ data }) => {
           </Link>
         </section>
 
-        <button className={styles.button} onClick={handleIncrement}>
+        <button className={styles.chevron} onClick={handleIncrement}>
           <img
             className={styles.icon}
             src="src/assets/right-chevron.png"
