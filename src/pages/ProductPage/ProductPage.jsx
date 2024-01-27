@@ -71,23 +71,28 @@ const ProductPage = () => {
 
               <div>
                 <p className={styles.product_price}>
+                  {selectedFormat.isOnSale && (
+                    <span className={styles.sale_label}>On Sale</span>
+                  )}
                   ${selectedFormat.price.toFixed(2)}
                 </p>
                 <div className={styles.formats_wrapper}>
                   {product.audioFormats &&
                     product.audioFormats.map((format, i) => (
-                      <Button
-                        key={format.format}
-                        handleClick={setSelectedFormat}
-                        fnParams={product.audioFormats[i]}
-                        text={format.format}
-                        variant={
-                          selectedFormat.format === format.format
-                            ? "primary"
-                            : "inactive"
-                        }
-                        size="small"
-                      />
+                      <>
+                        <Button
+                          key={format.format}
+                          handleClick={setSelectedFormat}
+                          fnParams={product.audioFormats[i]}
+                          text={format.format}
+                          variant={
+                            selectedFormat.format === format.format
+                              ? "primary"
+                              : "inactive"
+                          }
+                          size="small"
+                        />
+                      </>
                     ))}
                 </div>
               </div>
