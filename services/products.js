@@ -25,11 +25,11 @@ export const getAllProducts = async () => {
   return data;
 };
 
-export const getFeaturedProducts = async () => {
-  const q = query(collection(db, "products"), where("isFeatured", "==", true));
+export const getFilteredProducts = async (property, value) => {
+  const q = query(collection(db, "products"), where(property, "==", value));
   const querySnapshot = await getDocs(q);
   const data = querySnapshot.docs.map((doc) => {
-    console.log("Retrieved featured products.");
+    console.log("Retrieved filtered products.");
 
     return {
       id: doc.id,
