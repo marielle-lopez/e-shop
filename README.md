@@ -50,7 +50,17 @@ https://dribbble.com/shots/23222296-Vogue-Ecommerce-of-clothing-and-footwear
 
 https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/bb145c57779427.59e3bcce5efa9.jpg
 
+### Other
+
+- ChatGPT - https://chat.openai.com/
+
 ## Task Completion History
+
+### January 27, 2024
+
+- Added an 'On Sale' label to discounted products that would appear on the product page
+
+Didn't have a lot of time today; majority of the work done today was associated with styling. I added a sale label that would display if a specific product variant was discounted, formatted prices to 2 decimal places and ensured product images are not stretched. The next mini goal would be to display the original price of discounted products, as well as show the percentage taken off from the original price.
 
 ### January 25, 2024
 
@@ -120,6 +130,7 @@ I've also constructed a basic header and a functional navigation bar to start of
 
 ### High Priority
 
+- Make main content grow to fill the remaining vertical space
 - Add informative message when user adds or removes items from cart
 - Refactor styling of footer icons
 - Display real-time product quantities, especially when the user adds items to the cart
@@ -138,6 +149,8 @@ I've also constructed a basic header and a functional navigation bar to start of
 - Add animation and intervals to switching images in carousel
 - Make subscription form in footer functional
 - Create a Contact page
+- Filter types of products
+- Display when a product is on sale, show the product's original price as well
 
 ### Low Priority
 
