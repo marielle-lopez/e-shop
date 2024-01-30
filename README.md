@@ -121,6 +121,9 @@ I've also constructed a basic header and a functional navigation bar to start of
 
 ### High Priority
 
+- Fix prices to 2 decimal places for products on Products page
+- Show cheapest price for products on Products page
+- Deal with out of stock items
 - Store prices in cents, deal with conversion on the front-end
 - Add informative message when user adds or removes items from cart
 - Refactor styling of footer icons
