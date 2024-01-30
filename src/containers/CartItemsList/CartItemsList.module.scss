@@ -1,13 +1,25 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .remove_btn {
   border: none;
   background: none;
 }
 
 .bin_icon {
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 25px;
+  transition: 0.3s;
+
+  &:hover {
+    filter: brightness(1.75);
+  }
 }
 
 .card_wrapper {
   display: flex;
+  gap: 20px;
 }

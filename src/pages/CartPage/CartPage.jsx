@@ -20,12 +20,14 @@ const CartPage = () => {
 
   return (
     <PaddingWrapper>
-      <PageHeading>Your Shopping Cart</PageHeading>
-      {cart.length !== 0 ? (
-        <CartItemsList items={cart} />
-      ) : (
-        <p>Your shopping cart is empty.</p>
-      )}
+      <main>
+        <PageHeading>Your Shopping Cart</PageHeading>
+        {cart.length !== 0 ? (
+          <CartItemsList items={cart} />
+        ) : (
+          <p>Your shopping cart is empty.</p>
+        )}
+      </main>
     </PaddingWrapper>
   );
 };
