@@ -30,7 +30,7 @@ const Carousel = ({ data }) => {
         <button className={styles.chevron} onClick={handleDecrement}>
           <img
             className={styles.icon}
-            src="src/assets/left-chevron.png"
+            src="/left-chevron.png"
             alt="Left chevron icon"
           />
         </button>
@@ -54,7 +54,7 @@ const Carousel = ({ data }) => {
         <button className={styles.chevron} onClick={handleIncrement}>
           <img
             className={styles.icon}
-            src="src/assets/right-chevron.png"
+            src="/right-chevron.png"
             alt="Right chevron icon"
           />
         </button>
