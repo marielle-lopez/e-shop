@@ -15,7 +15,7 @@ const ProductCard = ({ id, title, artist, coverImg, cheapestPrice }) => {
           <p className={styles.title}>{title}</p>
           <p className={styles.artist}>{artist}</p>
           {cheapestPrice ? (
-            <p className={styles.price}>{`$${cheapestPrice}`}</p>
+            <p className={styles.price}>{`$${cheapestPrice.toFixed(2)}`}</p>
           ) : (
             <p className={styles.price__unavailable}>Coming soon</p>
           )}
