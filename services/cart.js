@@ -30,7 +30,8 @@ export const addItemToCart = async (
   img,
   price,
   qty,
-  inStockQty
+  inStockQty,
+  isOnSale
 ) => {
   const docRef = await addDoc(collection(db, "cart"), {
     productId: id,
@@ -42,6 +43,7 @@ export const addItemToCart = async (
     totalPrice: price * qty,
     qty: qty,
     inStockQty: inStockQty,
+    isOnSale: isOnSale,
   });
 
   console.log(`Item with ID ${docRef.id} added to cart.`);
