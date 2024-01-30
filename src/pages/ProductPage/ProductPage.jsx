@@ -3,9 +3,6 @@ import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { getProductById, adjustProductQty } from "/services/products";
 import { addItemToCart } from "/services/cart";
-
-import { CartContext } from "../../context/CartContextProvider/CartContextProvider";
-
 import Button from "../../components/Button/Button";
 import NumberInput from "../../components/NumberInput/NumberInput";
 import PaddingWrapper from "../../containers/PaddingWrapper/PaddingWrapper";
@@ -17,7 +14,6 @@ const ProductPage = () => {
   const [qty, setQty] = useState(1);
   const [product, setProduct] = useState(null);
   const [selectedFormat, setSelectedFormat] = useState(null);
-  const { cart, setCart } = useContext(CartContext);
 
   useEffect(() => {
     getProductById(id).then((response) => {
@@ -49,7 +45,8 @@ const ProductPage = () => {
       selectedFormat.img,
       selectedFormat.price,
       qty,
-      selectedFormat.qty - qty
+      selectedFormat.qty - qty,
+      selectedFormat.isOnSale
     );
   };
 
@@ -81,7 +78,6 @@ const ProductPage = () => {
                     product.audioFormats.map((format, i) => (
                       <>
                         <Button
-                          key={format.format}
                           handleClick={setSelectedFormat}
                           fnParams={product.audioFormats[i]}
                           text={format.format}

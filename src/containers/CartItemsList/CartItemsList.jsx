@@ -1,9 +1,19 @@
 import styles from "./CartItemsList.module.scss";
+import { useContext, useEffect, useState } from "react";
 import CartItemCard from "../../components/CartItemCard/CartItemCard";
 import { removeItemFromCart } from "/services/cart";
 import { adjustProductQty } from "/services/products";
+import { CartContext } from "../../context/CartContextProvider/CartContextProvider";
+import { getAllCartItems } from "../../../services/cart";
 
 const CartItemsList = ({ items }) => {
+  const { setCart } = useContext(CartContext);
+  const [clicked, setClicked] = useState(false);
+
+  useEffect(() => {
+    console.log("Item removed from cart.");
+  }, [clicked]);
+
   return (
     <div className={styles.wrapper}>
       {items &&
@@ -22,16 +32,19 @@ const CartItemsList = ({ items }) => {
             />
             <button
               onClick={() => {
+                setClicked(true);
                 removeItemFromCart(item.id);
                 adjustProductQty(
                   item.productId,
                   item.format,
                   item.img,
-                  false,
+                  item.isOnSale,
                   item.unitPrice,
                   item.inStockQty,
                   item.inStockQty + item.qty
                 );
+                getAllCartItems().then((response) => setCart(response));
+                setClicked(false);
               }}
               className={styles.remove_btn}
             >
