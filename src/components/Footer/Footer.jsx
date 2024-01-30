@@ -7,29 +7,21 @@ const Footer = () => {
     <footer className={styles.wrapper}>
       <div className={styles.row_wrapper}>
         <div className={styles.icons_wrapper}>
+          <img className={styles.icon} src="/spotify.png" alt="Spotify icon" />
           <img
             className={styles.icon}
-            src="./src/assets/spotify.png"
-            alt="Spotify icon"
-          />
-          <img
-            className={styles.icon}
-            src="./src/assets/instagram.png"
+            src="/instagram.png"
             alt="Instagram icon"
           />
-          <img
-            className={styles.icon__alt}
-            src="./src/assets/x.png"
-            alt="X icon"
-          />
+          <img className={styles.icon__alt} src="/x.png" alt="X icon" />
           <img
             className={styles.icon}
-            src="./src/assets/facebook.png"
+            src="/facebook.png"
             alt="Facebook icon"
           />
           <img
             className={styles.icon__alt}
-            src="./src/assets/tiktok.png"
+            src="/tiktok.png"
             alt="Tiktok icon"
           />
         </div>

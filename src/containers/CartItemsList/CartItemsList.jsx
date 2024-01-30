@@ -48,11 +48,7 @@ const CartItemsList = ({ items }) => {
               }}
               className={styles.remove_btn}
             >
-              <img
-                className={styles.bin_icon}
-                src="../src/assets/bin.png"
-                alt="Bin icon"
-              />
+              <img className={styles.bin_icon} src="/bin.png" alt="Bin icon" />
             </button>
           </div>
         ))}

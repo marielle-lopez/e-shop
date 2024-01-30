@@ -22,16 +22,12 @@ const NavBar = () => {
         <NavLink className={linkStyles} to="/favourites">
           <img
             className={styles.icon}
-            src="../src/assets/favourite.png"
+            src="/favourite.png"
             alt="Favourites icon"
           />
         </NavLink>
         <NavLink className={linkStyles} to="/cart">
-          <img
-            className={styles.icon}
-            src="../src/assets/cart.png"
-            alt="Cart icon"
-          />
+          <img className={styles.icon} src="/cart.png" alt="Cart icon" />
         </NavLink>
       </div>
     </nav>

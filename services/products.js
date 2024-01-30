@@ -45,7 +45,7 @@ export const getProductById = async (id) => {
   const docSnap = await getDoc(docRef);
 
   if (docSnap.exists()) {
-    console.log("Retrieved product with ID: ", id);
+    console.log("Retrieved product with ID:", id);
 
     return {
       id: id,

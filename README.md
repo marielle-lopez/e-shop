@@ -4,6 +4,12 @@ Welcome to Sound, your trusted source for exceptional audio products. Find CDs, 
 
 ## Resources
 
+- Toast notifications
+- W3Schools
+  - https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow
+- Stripe for checkout
+- Deployment with Netlify, Firebase, GitHub pages
+
 ### Fonts
 
 - [Krona One](https://fonts.google.com/specimen/Krona+One)
@@ -36,6 +42,10 @@ Welcome to Sound, your trusted source for exceptional audio products. Find CDs, 
 - [ChatGPT](https://chat.openai.com/)
 
 ## Task Completion History
+
+### January 30, 2024
+
+- Fixed main content to fill remaining vertical space in browser
 
 ### January 27, 2024
 
@@ -111,7 +121,7 @@ I've also constructed a basic header and a functional navigation bar to start of
 
 ### High Priority
 
-- Make main content grow to fill the remaining vertical space
+- Store prices in cents, deal with conversion on the front-end
 - Add informative message when user adds or removes items from cart
 - Refactor styling of footer icons
 - Display real-time product quantities, especially when the user adds items to the cart
@@ -121,6 +131,7 @@ I've also constructed a basic header and a functional navigation bar to start of
 - Add error handling
 - Allow user to favourite products
 - Store favourited items in Firestore database
+- Implement Favourites page
 - Add `config` directory to `.gitignore` file and mention in `README.md` for the read to request API key from project owner or to create their own Firestore service with a specific database schema
 
 ### Medium Priority

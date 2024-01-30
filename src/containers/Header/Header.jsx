@@ -10,7 +10,7 @@ const Header = () => {
           S
           <img
             className={styles.logo__icon}
-            src="./src/assets/vinyl.png"
+            src="/vinyl.png"
             alt="Vinyl icon"
           />
           und
