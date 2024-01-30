@@ -1,4 +1,5 @@
 import styles from "./CartItemCard.module.scss";
+import { Link } from "react-router-dom";
 
 const CartItemCard = ({
   productId = "Unknown",
@@ -14,16 +15,19 @@ const CartItemCard = ({
     <div className={styles.wrapper}>
       <img className={styles.img} src={img} alt={`${title} cover`} />
       <div className={styles.info}>
-        <div>
-          <h3 className={styles.title}>
-            {title} by {artist}
+        <div className={styles.title_id_wrapper}>
+          <h3 className={styles.heading}>
+            <Link className={styles.product_link} to={`/product/${productId}`}>
+              <span className={styles.title}>{title}</span>
+              <span className={styles.artist}> by {artist}</span>
+            </Link>
           </h3>
           <p className={styles.id}>{productId}</p>
         </div>
-        <p>{format}</p>
-        <p>{qty}</p>
-        <p>${unitPrice.toFixed(2)}</p>
-        <p>${totalPrice.toFixed(2)}</p>
+        <p className={styles.format}>{format}</p>
+        <p className={styles.qty}>{qty}</p>
+        <p className={styles.unit_price}>${unitPrice.toFixed(2)}</p>
+        <p className={styles.total_price}>${totalPrice.toFixed(2)}</p>
       </div>
     </div>
   );

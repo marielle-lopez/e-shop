@@ -1,9 +1,8 @@
 .wrapper {
   display: flex;
   flex-grow: 1;
-  padding: 25px;
+  padding: 25px 50px 25px 35px;
   gap: 40px;
-
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
 }
@@ -22,7 +21,48 @@
   object-fit: cover;
 }
 
+.heading {
+  margin: 0;
+}
+
+.title_id_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
 .id {
+  padding: 0;
   font-size: 14px;
   color: rgba(255, 255, 255, 0.2);
+}
+
+.artist {
+  font-weight: 200;
+}
+
+.title_id_wrapper,
+.format,
+.qty,
+.unit_price,
+.total_price {
+  width: 20%;
+}
+
+.format,
+.qty,
+.unit_price,
+.total_price {
+  text-align: right;
+}
+
+.product_link {
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
