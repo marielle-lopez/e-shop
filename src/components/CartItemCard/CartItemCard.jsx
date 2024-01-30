@@ -7,8 +7,8 @@ const CartItemCard = ({
   artist = "Unknown",
   img = "../src/assets/placeholder.png",
   qty = "Unknown",
-  unitPrice = "Unknown",
-  totalPrice = "Unknown",
+  unitPrice = 0,
+  totalPrice = 0,
 }) => {
   return (
     <div className={styles.wrapper}>
@@ -22,8 +22,8 @@ const CartItemCard = ({
         </div>
         <p>{format}</p>
         <p>{qty}</p>
-        <p>{unitPrice}</p>
-        <p>{totalPrice}</p>
+        <p>${unitPrice.toFixed(2)}</p>
+        <p>${totalPrice.toFixed(2)}</p>
       </div>
     </div>
   );
