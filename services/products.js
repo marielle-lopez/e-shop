@@ -60,6 +60,16 @@ export const getProductById = async (id) => {
   throw new Error("Sorry, the product you're looking for doesn't exist.");
 };
 
+export const toggleProductIsFavourite = async (productId, isFavourite) => {
+  const docRef = doc(db, "products", productId);
+
+  await updateDoc(docRef, {
+    isFavourite: isFavourite,
+  });
+
+  console.log(`Toggled 'isFavourite' of product ${productId}`);
+};
+
 export const adjustProductQty = async (
   id,
   format,
