@@ -8,7 +8,7 @@ import Carousel from "../../components/Carousel/Carousel";
 
 const HomePage = () => {
   const { setCart } = useContext(CartContext);
-  const { setFavouritedProducts } = useContext(FavouritesContext);
+  const { setFavouriteProducts } = useContext(FavouritesContext);
   const [featuredProducts, setFeaturedProducts] = useState(null);
 
   useEffect(() => {
@@ -20,8 +20,8 @@ const HomePage = () => {
       setFeaturedProducts(response)
     );
 
-    getFilteredProducts("isFavourited", true).then((response) =>
-      setFavouritedProducts(response)
+    getFilteredProducts("isFavourite", true).then((response) =>
+      setFavouriteProducts(response)
     );
   }, []);
 

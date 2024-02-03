@@ -3,11 +3,11 @@ import { createContext, useState } from "react";
 export const FavouritesContext = createContext(null);
 
 const FavouritesContextProvider = ({ children }) => {
-  const [favouritedProducts, setFavouritedProducts] = useState(null);
+  const [favouriteProducts, setFavouriteProducts] = useState(null);
 
   return (
     <FavouritesContext.Provider
-      value={{ favouritedProducts, setFavouritedProducts }}
+      value={{ favouriteProducts, setFavouriteProducts }}
     >
       {children}
     </FavouritesContext.Provider>
