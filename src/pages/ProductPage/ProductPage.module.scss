@@ -8,6 +8,8 @@
 }
 
 .img {
+  position: relative;
+  z-index: 0;
   width: 400px;
   object-fit: contain;
 }
@@ -27,6 +29,11 @@
 
   &_artist {
     opacity: 50%;
+  }
+
+  &_left_section {
+    display: flex;
+    justify-content: flex-end;
   }
 }
 
@@ -67,5 +74,12 @@
 
   &__filled {
     filter: grayscale(0) brightness(1);
+  }
+
+  &_btn {
+    position: absolute;
+    z-index: 1;
+    background: none;
+    border: none;
   }
 }

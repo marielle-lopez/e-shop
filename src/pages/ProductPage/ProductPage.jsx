@@ -1,7 +1,11 @@
 import styles from "./ProductPage.module.scss";
 import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { getProductById, adjustProductQty } from "/services/products";
+import {
+  getProductById,
+  adjustProductQty,
+  toggleProductIsFavourite,
+} from "/services/products";
 import { addItemToCart, getCartItem, adjustCartItemQty } from "/services/cart";
 import Button from "../../components/Button/Button";
 import NumberInput from "../../components/NumberInput/NumberInput";
@@ -14,11 +18,13 @@ const ProductPage = () => {
   const [qty, setQty] = useState(1);
   const [product, setProduct] = useState(null);
   const [selectedFormat, setSelectedFormat] = useState(null);
+  const [isFavourite, setIsFavourite] = useState(false);
 
   useEffect(() => {
     getProductById(id).then((response) => {
       setProduct(response);
       setSelectedFormat(response.audioFormats[0]);
+      setIsFavourite(response.isFavourite);
     });
   }, []);
 
@@ -74,19 +80,23 @@ const ProductPage = () => {
                 src={selectedFormat.img}
                 alt={`${selectedFormat.format} of ${product.title} by ${product.artist}`}
               />
-              <img
-                className={
-                  product.isFavourite
-                    ? `${styles.fave} ${styles.fave__filled}`
-                    : `${styles.fave}`
-                }
-                src={
-                  product.isFavourite
-                    ? "/favourite-filled.png"
-                    : "/favourite.png"
-                }
-                alt="Favourite icon"
-              />
+              <button
+                className={styles.fave_btn}
+                onClick={() => {
+                  toggleProductIsFavourite(id, !isFavourite);
+                  setIsFavourite(!isFavourite);
+                }}
+              >
+                <img
+                  className={
+                    isFavourite
+                      ? `${styles.fave} ${styles.fave__filled}`
+                      : `${styles.fave}`
+                  }
+                  src={isFavourite ? "/favourite-filled.png" : "/favourite.png"}
+                  alt="Favourite icon"
+                />
+              </button>
             </div>
             <div className={styles.product_details}>
               <div>
