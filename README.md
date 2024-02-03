@@ -20,7 +20,9 @@ Welcome to Sound, your trusted source for exceptional audio products. Find CDs, 
 - [Vinyl](https://icons8.com/icon/nkCsuxTboA0z/vinyl)
 - [Cart](https://icons8.com/icon/zhda2EVBCvHY/cart)
 - [Search](https://img.icons8.com/sf-regular/48/000000/search.png)
-- [Favourite](https://icons8.com/icon/64767/favourite)
+- Favourite
+  - [Outline](https://icons8.com/icon/64767/favourite)
+  - [Filled](https://icons8.com/icon/59805/heart)
 - [Right chevron](https://icons8.com/icon/85789/chevron)
 - [Left chevron](https://icons8.com/icon/88110/chevron)
 - [Instagram](https://icons8.com/icon/kfnjM4KPaLxk/instagram)
@@ -42,6 +44,14 @@ Welcome to Sound, your trusted source for exceptional audio products. Find CDs, 
 - [ChatGPT](https://chat.openai.com/)
 
 ## Task Completion History
+
+### February 3, 2024
+
+- Updated cart item quantity if a user added a product that already exists on the Cart page (also considers item's format)
+- Allowed user to favourite/un-favourite products
+- Displayed favourited products on Favourites page
+
+Reaching the end of the timeblock to complete this project! Today's focus was finishing off the main functional features of this website, such as updating existing cart item quantities if a user added such products to their cart. In addition to this, I managed to allow the user to favourite/un-favourite products, and displayed favourited products on the Favourites page.
 
 ### January 30, 2024
 
@@ -121,24 +131,27 @@ I've also constructed a basic header and a functional navigation bar to start of
 
 ### High Priority
 
-- Fix prices to 2 decimal places for products on Products page
-- Show cheapest price for products on Products page
+- Media queries
+- Remove products with images with white backgrounds
 - Deal with out of stock items
 - Store prices in cents, deal with conversion on the front-end
-- Add informative message when user adds or removes items from cart
-- Refactor styling of footer icons
-- Display real-time product quantities, especially when the user adds items to the cart
-- Adjust quantity of product in cart if user adds a product that already exists in the cart
 - Add placeholder images
 - Add loading states
 - Add error handling
-- Allow user to favourite products
-- Store favourited items in Firestore database
-- Implement Favourites page
 - Add `config` directory to `.gitignore` file and mention in `README.md` for the read to request API key from project owner or to create their own Firestore service with a specific database schema
+- Add NumberInput component to cart items on Product page
+- Add subtotal price to Cart page
+- Make page reset to top when footer links are clicked
+- Fix changing width of number input component
+- Show sale label for sale items on Products page
+- Show cheapest price for products on Products page
+- Add informative message when user adds or removes items from cart
+- Refactor styling of footer icons
+- Display real-time product quantities, especially when the user adds items to the cart
 
 ### Medium Priority
 
+- Fix grid for last items on Products page
 - Add contact information to footer
 - Create an enum for button variants and sizes
 - Add animation and intervals to switching images in carousel
@@ -150,6 +163,9 @@ I've also constructed a basic header and a functional navigation bar to start of
 
 ### Low Priority
 
+- Link cart items to their corresponding Product page but with specific format selected
+- Implement a checkout feature (look at using Stripe)
+- Make NavBar sticky to the top
 - Format and re-structure 'Resources' section of `README.md` file
 - Change icons in navbar to be filled icons when link is active
 - Create an administrator portal to perform CRUD tasks on Firestore database
