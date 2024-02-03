@@ -27,16 +27,16 @@ export const getAllCartItems = async () => {
 };
 
 export const getCartItem = async (title, artist, format) => {
-  // const cartRef = collection(db, "cart");
+  const cartRef = collection(db, "cart");
 
-  // const q = query(
-  //   cartRef,
-  //   where("artist", "==", artist)
-  //   // where("title", "==", title),
-  //   // where("format", "==", format)
-  // );
+  const q = query(
+    cartRef,
+    where("artist", "==", artist),
+    where("title", "==", title),
+    where("format", "==", format)
+  );
 
-  const q = query(collection(db, "cart"), where("artist", "==", artist));
+  // const q = query(collection(db, "cart"), where("title", "==", title));
   const querySnapshot = await getDocs(q);
   const data = querySnapshot.docs.map((doc) => {
     return {
