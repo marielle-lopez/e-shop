@@ -1,10 +1,14 @@
 import {
   getDocs,
+  getDoc,
   collection,
   addDoc,
   deleteDoc,
   doc,
   onSnapshot,
+  updateDoc,
+  where,
+  query,
 } from "firebase/firestore";
 import { db } from "/src/config/firebase";
 
@@ -20,6 +24,78 @@ export const getAllCartItems = async () => {
   console.log("Retrieved all cart items.");
 
   return data;
+};
+
+export const getCartItem = async (title, artist, format) => {
+  // const cartRef = collection(db, "cart");
+
+  // const q = query(
+  //   cartRef,
+  //   where("artist", "==", artist)
+  //   // where("title", "==", title),
+  //   // where("format", "==", format)
+  // );
+
+  const q = query(collection(db, "cart"), where("artist", "==", artist));
+  const querySnapshot = await getDocs(q);
+  const data = querySnapshot.docs.map((doc) => {
+    return {
+      cartItemId: doc.id,
+      ...doc.data(),
+    };
+  });
+
+  console.log(data);
+
+  return data;
+
+  // try {
+  //   return querySnapshot.docs.forEach((doc) => {
+  //     // console.log({
+  //     //   cartItemId: doc.id,
+  //     //   ...doc.data(),
+  //     // });
+
+  //     return {
+  //       cartItemId: doc.id,
+  //       ...doc.data(),
+  //     };
+  //   });
+  // } catch (e) {
+  //   throw new Error(
+  //     `${format} of ${title} by ${artist} not found in cart; ${e.message}`
+  //   );
+  // }
+
+  // const docRef = doc(db, "cart", productId);
+  // const docSnap = await getDoc(docRef);
+
+  // if (docSnap.exists()) {
+  //   console.log(`Product with ID ${productId} found in cart.`);
+  //   return {
+  //     cartItemId: docSnap.id,
+  //     ...docSnap.data(),
+  //   };
+  // }
+};
+
+export const adjustCartItemQty = async (
+  cartItemId,
+  inStockQty,
+  oldQty,
+  newQty,
+  unitPrice
+) => {
+  console.log(cartItemId, inStockQty + (oldQty - newQty), oldQty, newQty);
+  const docRef = doc(db, "cart", cartItemId);
+
+  await updateDoc(docRef, {
+    inStockQty: inStockQty + (oldQty - newQty),
+    qty: newQty,
+    totalPrice: newQty * unitPrice,
+  });
+
+  console.log(`Adjusted quantity of cart item ${cartItemId}.`);
 };
 
 export const addItemToCart = async (

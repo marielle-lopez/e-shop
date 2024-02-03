@@ -2,7 +2,7 @@ import styles from "./ProductPage.module.scss";
 import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { getProductById, adjustProductQty } from "/services/products";
-import { addItemToCart } from "/services/cart";
+import { addItemToCart, getCartItem, adjustCartItemQty } from "/services/cart";
 import Button from "../../components/Button/Button";
 import NumberInput from "../../components/NumberInput/NumberInput";
 import PaddingWrapper from "../../containers/PaddingWrapper/PaddingWrapper";
@@ -27,7 +27,6 @@ const ProductPage = () => {
   }, [selectedFormat]);
 
   const handleAddToCart = () => {
-    console.log(selectedFormat);
     adjustProductQty(
       id,
       selectedFormat.format,
@@ -37,17 +36,31 @@ const ProductPage = () => {
       selectedFormat.qty,
       selectedFormat.qty - qty
     );
-    addItemToCart(
-      id,
-      product.title,
-      product.artist,
-      selectedFormat.format,
-      selectedFormat.img,
-      selectedFormat.price,
-      qty,
-      selectedFormat.qty - qty,
-      selectedFormat.isOnSale
-    );
+
+    getCartItem(product.title, product.artist, selectedFormat.format)
+      .then((response) => {
+        adjustCartItemQty(
+          response[0].cartItemId,
+          response[0].inStockQty,
+          response[0].qty,
+          response[0].qty + qty,
+          response[0].unitPrice
+        );
+      })
+      .catch((e) => {
+        console.warn(e.message);
+        addItemToCart(
+          id,
+          product.title,
+          product.artist,
+          selectedFormat.format,
+          selectedFormat.img,
+          selectedFormat.price,
+          qty,
+          selectedFormat.qty - qty,
+          selectedFormat.isOnSale
+        );
+      });
   };
 
   return (

@@ -4,6 +4,19 @@
   gap: 20px;
 }
 
+.headings {
+  display: flex;
+  padding: 0 40px 0 35px;
+
+  &__blank {
+    width: 140px;
+  }
+
+  &__items {
+    display: flex;
+  }
+}
+
 .remove_btn {
   border: none;
   background: none;

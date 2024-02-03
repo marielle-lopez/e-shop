@@ -37,12 +37,16 @@ export const getFilteredProducts = async (property, value) => {
     };
   });
 
+  console.log(data);
+
   return data;
 };
 
 export const getProductById = async (id) => {
   const docRef = doc(db, "products", id);
   const docSnap = await getDoc(docRef);
+
+  console.log(docSnap);
 
   if (docSnap.exists()) {
     console.log("Retrieved product with ID:", id);

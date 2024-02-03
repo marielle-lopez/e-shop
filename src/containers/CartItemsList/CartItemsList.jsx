@@ -16,6 +16,18 @@ const CartItemsList = ({ items }) => {
 
   return (
     <div className={styles.wrapper}>
+      <div className={styles.headings}>
+        <p className={styles.headings__blank}></p>
+
+        <div className={styles.headings__items}>
+          <p className={styles.headings__items__item}>Product</p>
+          <p className={styles.headings__items__item}>Format</p>
+          <p className={styles.headings__items__item}>Quantity</p>
+          <p className={styles.headings__items__item}>Unit Price</p>
+          <p className={styles.headings__items__item}>Total Price</p>
+        </div>
+      </div>
+
       {items &&
         items.map((item) => (
           <div key={item.id + "_div"} className={styles.card_wrapper}>
