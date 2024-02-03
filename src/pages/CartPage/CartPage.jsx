@@ -1,3 +1,5 @@
+import styles from "./CartPage.module.scss";
+
 import { useContext, useEffect } from "react";
 import { subscribeToCart, getAllCartItems } from "../../../services/cart";
 import { CartContext } from "../../context/CartContextProvider/CartContextProvider";
@@ -23,7 +25,48 @@ const CartPage = () => {
       <main>
         <PageHeading>Your Shopping Cart</PageHeading>
         {cart.length !== 0 ? (
-          <CartItemsList items={cart} />
+          <>
+            <div className={styles.headings}>
+              <p className={styles.headings__blank}></p>
+
+              <div className={styles.headings__items}>
+                <p className={styles.headings__items__item}>Product</p>
+                <p
+                  className={[
+                    styles.headings__items__item,
+                    styles.headings__items__item__right,
+                  ].join(" ")}
+                >
+                  Format
+                </p>
+                <p
+                  className={[
+                    styles.headings__items__item,
+                    styles.headings__items__item__right,
+                  ].join(" ")}
+                >
+                  Quantity
+                </p>
+                <p
+                  className={[
+                    styles.headings__items__item,
+                    styles.headings__items__item__right,
+                  ].join(" ")}
+                >
+                  Unit Price
+                </p>
+                <p
+                  className={[
+                    styles.headings__items__item,
+                    styles.headings__items__item__right,
+                  ].join(" ")}
+                >
+                  Total Price
+                </p>
+              </div>
+            </div>
+            <CartItemsList items={cart} />
+          </>
         ) : (
           <p>Your shopping cart is empty.</p>
         )}
