@@ -60,3 +60,12 @@
   background-color: #fd4444;
   border-radius: 5px;
 }
+
+.fave {
+  width: 40px;
+  filter: grayscale(1) brightness(2);
+
+  &__filled {
+    filter: grayscale(0) brightness(1);
+  }
+}

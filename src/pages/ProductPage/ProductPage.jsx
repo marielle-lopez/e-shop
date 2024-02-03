@@ -68,11 +68,26 @@ const ProductPage = () => {
       <main className={styles.wrapper}>
         {product && selectedFormat && (
           <>
-            <img
-              className={styles.img}
-              src={selectedFormat.img}
-              alt={`${selectedFormat.format} of ${product.title} by ${product.artist}`}
-            />
+            <div className={styles.product_left_section}>
+              <img
+                className={styles.img}
+                src={selectedFormat.img}
+                alt={`${selectedFormat.format} of ${product.title} by ${product.artist}`}
+              />
+              <img
+                className={
+                  product.isFavourite
+                    ? `${styles.fave} ${styles.fave__filled}`
+                    : `${styles.fave}`
+                }
+                src={
+                  product.isFavourite
+                    ? "/favourite-filled.png"
+                    : "/favourite.png"
+                }
+                alt="Favourite icon"
+              />
+            </div>
             <div className={styles.product_details}>
               <div>
                 <h2 className={styles.product_title}>{product.title}</h2>
