@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import styles from "./Carousel.module.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Carousel = ({ data }) => {
   const [index, setIndex] = useState(0);
@@ -23,6 +23,14 @@ const Carousel = ({ data }) => {
 
     setIndex(index + 1);
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleIncrement();
+    }, 8000);
+
+    return () => clearInterval(interval);
+  }, [index]);
 
   return (
     <>
