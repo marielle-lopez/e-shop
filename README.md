@@ -45,6 +45,15 @@ Welcome to Sound, your trusted source for exceptional audio products. Find CDs, 
 
 ## Task Completion History
 
+### February 4, 2024
+
+- Added loading states and spinners to improve UX
+- Handled out-of-stock items
+
+One of the important features I hadn't implemented until now was loading states and spinners; they inform the user that content is yet to display on the page — an important concept in UX.
+
+Since I had items in the database that had quantities of 0, I had to handle these in a way to not only tell the user it was out-of-stock, but also to prevent them from adding such products to the cart. I did this by adding conditional rendering to the 'Add item to cart' button and NumberInput component. These two components would be replaced by the text 'Out of Stock' for items with quantities of 0.
+
 ### February 3, 2024
 
 - Updated cart item quantity if a user added a product that already exists on the Cart page (also considers item's format)
@@ -131,13 +140,10 @@ I've also constructed a basic header and a functional navigation bar to start of
 
 ### High Priority
 
+- Add error handling
 - Media queries
-- Remove products with images with white backgrounds
-- Deal with out of stock items
 - Store prices in cents, deal with conversion on the front-end
 - Add placeholder images
-- Add loading states
-- Add error handling
 - Add `config` directory to `.gitignore` file and mention in `README.md` for the read to request API key from project owner or to create their own Firestore service with a specific database schema
 - Add NumberInput component to cart items on Product page
 - Add subtotal price to Cart page
@@ -160,6 +166,8 @@ I've also constructed a basic header and a functional navigation bar to start of
 - Create an Our Stores page
 - Filter types of products
 - Display when a product is on sale, show the product's original price as well
+- Add product description to Product page
+- Add React testing
 
 ### Low Priority
 
