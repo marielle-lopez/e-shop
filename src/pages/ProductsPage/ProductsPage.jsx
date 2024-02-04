@@ -1,3 +1,4 @@
+import styles from "./ProductsPage.module.scss";
 import { useContext, useEffect, useState } from "react";
 import ProductsList from "../../containers/ProductsList/ProductsList";
 import { ProductsContext } from "../../context/ProductsContextProvider/ProductsContextProvider";
@@ -23,11 +24,13 @@ const ProductsPage = () => {
     <PaddingWrapper>
       <main>
         <PageHeading>Products</PageHeading>
-        {loading && (
-          <Box sx={{ display: "flex" }}>
-            <CircularProgress />
-          </Box>
-        )}
+        <div className={styles.wrapper}>
+          {loading && (
+            <Box sx={{ display: "flex" }}>
+              <CircularProgress />
+            </Box>
+          )}
+        </div>
         {products && !loading && <ProductsList products={products} />}
       </main>
     </PaddingWrapper>
