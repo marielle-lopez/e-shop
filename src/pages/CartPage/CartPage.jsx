@@ -1,17 +1,24 @@
 import styles from "./CartPage.module.scss";
 
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { subscribeToCart, getAllCartItems } from "../../../services/cart";
 import { CartContext } from "../../context/CartContextProvider/CartContextProvider";
 import CartItemsList from "../../containers/CartItemsList/CartItemsList";
 import PaddingWrapper from "../../containers/PaddingWrapper/PaddingWrapper";
 import PageHeading from "../../components/PageHeading/PageHeading";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 const CartPage = () => {
   const { cart, setCart } = useContext(CartContext);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    getAllCartItems().then((response) => setCart(response));
+    setLoading(true);
+    getAllCartItems().then((response) => {
+      setCart(response);
+      setLoading(false);
+    });
   }, []);
 
   // useEffect(() => {
@@ -24,7 +31,18 @@ const CartPage = () => {
     <PaddingWrapper>
       <main>
         <PageHeading>Your Shopping Cart</PageHeading>
-        {cart.length !== 0 ? (
+
+        <div className={styles.wrapper}>
+          {loading && (
+            <Box sx={{ display: "flex" }}>
+              <CircularProgress />
+            </Box>
+          )}
+        </div>
+
+        {cart.length === 0 && !loading && <p>Your shopping cart is empty.</p>}
+
+        {cart.length !== 0 && !loading && (
           <>
             <div className={styles.headings}>
               <p className={styles.headings__blank}></p>
@@ -67,8 +85,6 @@ const CartPage = () => {
             </div>
             <CartItemsList items={cart} />
           </>
-        ) : (
-          <p>Your shopping cart is empty.</p>
         )}
       </main>
     </PaddingWrapper>

@@ -1,5 +1,5 @@
 import styles from "./ProductPage.module.scss";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import {
   getProductById,
@@ -10,6 +10,8 @@ import { addItemToCart, getCartItem, adjustCartItemQty } from "/services/cart";
 import Button from "../../components/Button/Button";
 import NumberInput from "../../components/NumberInput/NumberInput";
 import PaddingWrapper from "../../containers/PaddingWrapper/PaddingWrapper";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 const ProductPage = () => {
   const pathVariables = useParams();
@@ -19,12 +21,15 @@ const ProductPage = () => {
   const [product, setProduct] = useState(null);
   const [selectedFormat, setSelectedFormat] = useState(null);
   const [isFavourite, setIsFavourite] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     getProductById(id).then((response) => {
       setProduct(response);
       setSelectedFormat(response.audioFormats[0]);
       setIsFavourite(response.isFavourite);
+      setLoading(false);
     });
   }, []);
 
@@ -72,13 +77,23 @@ const ProductPage = () => {
   return (
     <PaddingWrapper>
       <main className={styles.wrapper}>
-        {product && selectedFormat && (
+        {loading && (
+          <Box sx={{ display: "flex" }}>
+            <CircularProgress />
+          </Box>
+        )}
+
+        {product && !loading && (
           <>
             <div className={styles.product_left_section}>
               <img
                 className={styles.img}
-                src={selectedFormat.img}
-                alt={`${selectedFormat.format} of ${product.title} by ${product.artist}`}
+                src={selectedFormat ? selectedFormat.img : product.coverImg}
+                alt={
+                  selectedFormat
+                    ? `${selectedFormat.format} of ${product.title} by ${product.artist}`
+                    : `Cover of ${product.title} by ${product.artist}`
+                }
               />
               <button
                 className={styles.fave_btn}
@@ -98,57 +113,73 @@ const ProductPage = () => {
                 />
               </button>
             </div>
+
             <div className={styles.product_details}>
               <div>
                 <h2 className={styles.product_title}>{product.title}</h2>
                 <p className={styles.product_artist}>by {product.artist}</p>
               </div>
 
-              <div>
-                <p className={styles.product_price}>
-                  {selectedFormat.isOnSale && (
-                    <span className={styles.sale_label}>On Sale</span>
-                  )}
-                  ${selectedFormat.price.toFixed(2)}
-                </p>
-                <div className={styles.formats_wrapper}>
-                  {product.audioFormats &&
-                    product.audioFormats.map((format, i) => (
-                      <>
-                        <Button
-                          handleClick={setSelectedFormat}
-                          fnParams={product.audioFormats[i]}
-                          text={format.format}
-                          variant={
-                            selectedFormat.format === format.format
-                              ? "primary"
-                              : "inactive"
-                          }
-                          size="small"
-                        />
-                      </>
-                    ))}
-                </div>
-              </div>
+              {selectedFormat ? (
+                <>
+                  <div>
+                    <p className={styles.product_price}>
+                      {selectedFormat.isOnSale && (
+                        <span className={styles.sale_label}>On Sale</span>
+                      )}
+                      ${selectedFormat.price.toFixed(2)}
+                    </p>
+                    <div className={styles.formats_wrapper}>
+                      {product.audioFormats &&
+                        product.audioFormats.map((format, i) => (
+                          <>
+                            <Button
+                              key={format}
+                              handleClick={setSelectedFormat}
+                              fnParams={product.audioFormats[i]}
+                              text={format.format}
+                              variant={
+                                selectedFormat.format === format.format
+                                  ? "primary"
+                                  : "inactive"
+                              }
+                              size="small"
+                            />
+                          </>
+                        ))}
+                    </div>
+                  </div>
 
-              <div>
-                <p>Quantity</p>
-                <div>
-                  <NumberInput
-                    min={1}
-                    max={selectedFormat.qty}
-                    qty={qty}
-                    setQty={setQty}
-                  />
-                </div>
-              </div>
-              <button
-                onClick={handleAddToCart}
-                className={styles.addToCart_btn}
-                disabled={false}
-              >
-                Add to cart
-              </button>
+                  {selectedFormat.qty ? (
+                    <>
+                      <div>
+                        <p>Quantity</p>
+                        <div>
+                          <NumberInput
+                            min={1}
+                            max={selectedFormat.qty}
+                            qty={qty}
+                            setQty={setQty}
+                          />
+                        </div>
+                      </div>
+                      <button
+                        onClick={handleAddToCart}
+                        className={styles.addToCart_btn}
+                        disabled={false}
+                      >
+                        Add to cart
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <p className={styles.out_of_stock}>Out of stock</p>
+                    </>
+                  )}
+                </>
+              ) : (
+                <p className={styles.coming_soon}>Coming soon</p>
+              )}
             </div>
           </>
         )}

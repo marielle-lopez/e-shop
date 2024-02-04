@@ -35,6 +35,12 @@
     display: flex;
     justify-content: flex-end;
   }
+
+  &_price {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
 }
 
 .addToCart_btn {
@@ -69,6 +75,7 @@
 }
 
 .fave {
+  margin: 20px 20px 0 0;
   width: 40px;
   filter: grayscale(1) brightness(2);
 
@@ -82,4 +89,14 @@
     background: none;
     border: none;
   }
+}
+
+.coming_soon {
+  opacity: 50%;
+  font-style: italic;
+}
+
+.out_of_stock {
+  font-weight: bold;
+  text-transform: uppercase;
 }
