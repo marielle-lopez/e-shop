@@ -127,7 +127,7 @@ const ProductPage = () => {
                       {selectedFormat.isOnSale && (
                         <span className={styles.sale_label}>On Sale</span>
                       )}
-                      ${selectedFormat.price.toFixed(2)}
+                      ${(selectedFormat.price / 100).toFixed(2)}
                     </p>
                     <div className={styles.formats_wrapper}>
                       {product.audioFormats &&

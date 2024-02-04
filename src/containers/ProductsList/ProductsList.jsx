@@ -16,10 +16,10 @@ const ProductsList = ({ products }) => {
             product.isForSale &&
             product.audioFormats.reduce((min, format) => {
               if (format.price > min || min === 0) {
-                min = format.price;
+                return (min = format.price);
               }
               return min;
-            }, 0)
+            }, 0) / 100
           }
         />
       ))}

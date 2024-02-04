@@ -26,8 +26,8 @@ const CartItemCard = ({
         </div>
         <p className={styles.format}>{format}</p>
         <p className={styles.qty}>{qty}</p>
-        <p className={styles.unit_price}>${unitPrice.toFixed(2)}</p>
-        <p className={styles.total_price}>${totalPrice.toFixed(2)}</p>
+        <p className={styles.unit_price}>${(unitPrice / 100).toFixed(2)}</p>
+        <p className={styles.total_price}>${(totalPrice / 100).toFixed(2)}</p>
       </div>
     </div>
   );
