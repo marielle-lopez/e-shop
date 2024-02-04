@@ -4,11 +4,15 @@ Welcome to Sound, your trusted source for exceptional audio products. Find CDs, 
 
 ## Resources
 
-- Toast notifications
 - W3Schools
   - https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow
 - Stripe for checkout
 - Deployment with Netlify, Firebase, GitHub pages
+
+### External Component Libraries
+
+- [Material UI](https://mui.com/)
+- [React-Toastify](https://fkhadra.github.io/react-toastify/)
 
 ### Fonts
 
@@ -49,10 +53,14 @@ Welcome to Sound, your trusted source for exceptional audio products. Find CDs, 
 
 - Added loading states and spinners to improve UX
 - Handled out-of-stock items
+- Allowed Carousel component to automatically change its showcase image every 8 seconds
+- Utilised React-Toastify library to add toast notifications
 
 One of the important features I hadn't implemented until now was loading states and spinners; they inform the user that content is yet to display on the page — an important concept in UX.
 
 Since I had items in the database that had quantities of 0, I had to handle these in a way to not only tell the user it was out-of-stock, but also to prevent them from adding such products to the cart. I did this by adding conditional rendering to the 'Add item to cart' button and NumberInput component. These two components would be replaced by the text 'Out of Stock' for items with quantities of 0.
+
+One of the quality-of-life features I wanted to add to my application was toast notifications. This ended up being a really simple aspect to implement, which I did by using the [React-Toastify](https://fkhadra.github.io/react-toastify/) library. The only time toast notifications are used are when a user clicks the 'Add to cart' button on a product page.
 
 ### February 3, 2024
 
@@ -140,9 +148,9 @@ I've also constructed a basic header and a functional navigation bar to start of
 
 ### High Priority
 
+- Make showcase images change
 - Add error handling
 - Media queries
-- Store prices in cents, deal with conversion on the front-end
 - Add placeholder images
 - Add `config` directory to `.gitignore` file and mention in `README.md` for the read to request API key from project owner or to create their own Firestore service with a specific database schema
 - Add NumberInput component to cart items on Product page
@@ -151,7 +159,6 @@ I've also constructed a basic header and a functional navigation bar to start of
 - Fix changing width of number input component
 - Show sale label for sale items on Products page
 - Show cheapest price for products on Products page
-- Add informative message when user adds or removes items from cart
 - Refactor styling of footer icons
 - Display real-time product quantities, especially when the user adds items to the cart
 
