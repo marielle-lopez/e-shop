@@ -19,7 +19,11 @@ const FavouritesPage = () => {
     <PaddingWrapper>
       <main>
         <PageHeading>Favourites</PageHeading>
-        {favouriteProducts && <ProductsList products={favouriteProducts} />}
+        {favouriteProducts.length !== 0 ? (
+          <ProductsList products={favouriteProducts} />
+        ) : (
+          <p>You haven't favourited a product yet!</p>
+        )}
       </main>
     </PaddingWrapper>
   );
