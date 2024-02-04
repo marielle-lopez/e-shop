@@ -12,6 +12,8 @@ import NumberInput from "../../components/NumberInput/NumberInput";
 import PaddingWrapper from "../../containers/PaddingWrapper/PaddingWrapper";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 
 const ProductPage = () => {
   const pathVariables = useParams();
@@ -73,6 +75,8 @@ const ProductPage = () => {
         );
       });
   };
+
+  const notify = () => toast.info("Item added to cart!");
 
   return (
     <PaddingWrapper>
@@ -164,7 +168,10 @@ const ProductPage = () => {
                         </div>
                       </div>
                       <button
-                        onClick={handleAddToCart}
+                        onClick={() => {
+                          handleAddToCart();
+                          notify();
+                        }}
                         className={styles.addToCart_btn}
                         disabled={false}
                       >
@@ -184,6 +191,8 @@ const ProductPage = () => {
           </>
         )}
       </main>
+
+      <ToastContainer theme="dark" />
     </PaddingWrapper>
   );
 };
