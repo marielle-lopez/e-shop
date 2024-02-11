@@ -1,4 +1,4 @@
-[Vinyl icon](/vinyl.png)
+![Vinyl icon](./vinyl.png)
 
 # Sound
 
