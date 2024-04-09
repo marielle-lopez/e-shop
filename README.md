@@ -1,8 +1,12 @@
 # Sound
 
-Welcome to Sound, your trusted source for exceptional audio products. Find CDs, cassettes, and vinyls of music from the top global artists and order them right to your door with just the click of a button. Prefer to shop in-person? Find one of our stores near you.
+Welcome to [Sound](https://shiny-marigold-33e42a.netlify.app), your trusted source for exceptional audio products. Find CDs, cassettes, and vinyls of music from the top global artists and order them right to your door with just the click of a button. Prefer to shop in-person? Find one of our stores near you.
 
-[Deployed version](https://shiny-marigold-33e42a.netlify.app)
+<br />
+
+![Quick demonstration of using Sound's website](./demo.gif)
+
+<br />
 
 ## Task Completion History
 
@@ -101,7 +105,6 @@ As usual, I started a design mockup of my fake online store (in Figma) to get a 
 
 I've also constructed a basic header and a functional navigation bar to start off the code of this project.
 
-
 ## Resources
 
 - W3Schools
@@ -151,7 +154,7 @@ I've also constructed a basic header and a functional navigation bar to start of
 
 ### High Priority
 
-- Make showcase images change
+- Add animation to changing showcase images
 - Add error handling
 - Media queries
 - Add placeholder images
